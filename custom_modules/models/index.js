@@ -42,6 +42,10 @@ const Recipe_Ingredient = db.define('recipe_ingredient', {
 	timestamps: false
 });
 
+Models.Recipe = Recipe;
+Models.Ingredient = Ingredient;
+Models.Recipe_Ingredient = Recipe_Ingredient;
+
 // Score.removeAttribute('id');
 
 module.exports = Models;
