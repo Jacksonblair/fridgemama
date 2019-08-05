@@ -13,7 +13,7 @@ const Recipe = db.define('recipe', {
 	description: Sequelize.TEXT,
 	method: Sequelize.TEXT
 }, {
-	// timestamps: false
+	timestamps: false
 });
 
 // Ingredient model
