@@ -5,7 +5,7 @@ var Models = {};
 // Recipe model
 const Recipe = db.define('recipe', {
 	id: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.SERIAL,
 		primaryKey: true,
 		autoIncrement: true // Automatically gets converted to SERIAL for postgres
 	},
@@ -19,7 +19,7 @@ const Recipe = db.define('recipe', {
 // Ingredient model
 const Ingredient = db.define('ingredient', {
 	id: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.SERIAL,
 		primaryKey: true,
 		autoIncrement: true // Automatically gets converted to SERIAL for postgres
 	},
@@ -31,11 +31,11 @@ const Ingredient = db.define('ingredient', {
 // Recipe_ingredient association table model
 const Recipe_Ingredient = db.define('recipe_ingredient', {
 	recipe_id: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.SERIAL,
 		references: { model: "recipe", key: "id" }
 	},	
 	ingredient_id: {
-		type: Sequelize.INTEGER,
+		type: Sequelize.SERIAL,
 		references: { model: "ingredient", key: "id" }
 	}
 }, {

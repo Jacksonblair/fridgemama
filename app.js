@@ -56,7 +56,7 @@ function testDb(name, desc, method) {
 	models.Recipe.create({
 	    name: name,
 	    description: desc,
-	    name: method
+	    method: method
 	}).then(() => {
 	    console.log("User had no score for channel. Score created.")
 	});
