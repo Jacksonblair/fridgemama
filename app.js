@@ -9,7 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-const models = require('/custom_modules/models');
+const models = require('./custom_modules/models');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
