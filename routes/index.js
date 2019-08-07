@@ -20,8 +20,8 @@ async function getRecipes() {
 	}
 
 	var query2 = {
-		text: 'INSERT INTO ingredients_needed(name) VALUES($1)',
-		values: ['Bread']
+		text: 'INSERT INTO ingredients_needed(name) VALUES($1), ($2), ($3)',
+		values: ['Bread', 'Beef', 'Lettuce']
 	}
 
 	var query3 = {
@@ -61,7 +61,7 @@ async function getRecipes() {
 		.query(query3)
 		.then(res => {
 			console.log("Checking for recipes");
-			console.log(res);
+			console.log(res.rows);
 		})
 		.catch(e => console.error(e.stack))
 	}
