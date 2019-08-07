@@ -30,7 +30,7 @@ async function getRecipes(ingredients) {
 
 	function insertToTemporaryTable() {
 		var text = 'INSERT INTO ingredients_needed(name)'
-		var values = ['Beef', 'Bread'];
+		var values = [];
 		// for ea. search term in ingredients array, add row to ingredients_needed
 		ingredients.forEach((ingredient) => {
 			values.push(ingredient);
@@ -44,7 +44,9 @@ async function getRecipes(ingredients) {
 	}
 }
 
-getRecipes();
+var stuff = ['Bread', 'Beer'];
+
+getRecipes(stuff);
 
 /*
 CREATE TEMPORARY TABLE ingredients_needed(name text);
