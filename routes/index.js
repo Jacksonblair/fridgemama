@@ -41,7 +41,7 @@ async function getRecipes(ingredients) {
 		.then(res => {
 			console.log(res.rows);	
 		})
-		.catch(e => console.erorr(e.stack))
+		.catch(e => console.error(e.stack))
 	}
 }
 
