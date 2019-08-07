@@ -17,8 +17,8 @@ async function getRecipes(ingredients) {
 
 	console.log("Starting getRecipes()");
 
-	// CREATE TEMPORARY TABLE
-	function createTemporaryTable() {
+	// CREATE TEMPORARY TABLE, call immediately.
+	(function createTemporaryTable() {
 		var text = 'CREATE TEMPORARY TABLE ingredients_needed(name text);'
 		// promise
 		db.client
@@ -27,7 +27,7 @@ async function getRecipes(ingredients) {
 			insertToTemporaryTable()
 		})
 		.catch(e => console.error(e.stack))
-	}
+	})();
 
 	function insertToTemporaryTable() {
 		var text = 'INSERT INTO ingredients_needed(name)'
