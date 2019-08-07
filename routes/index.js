@@ -5,8 +5,7 @@ const client = require('../custom_modules/js/client');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var terms = ['Beef', 'Bread'];
-	getRecipes(terms);
+	getRecipes();
 	res.render('index', { title: 'Fridgemama' });
 });
 
@@ -14,35 +13,39 @@ router.get('/results', function(req, res, next) {
 	res.render('results', {  });
 });
 
-async function getRecipes(ingredients) {
+async function getRecipes() {
 	console.log("Starting getRecipes()");
 
+	var query1 = {
+		text: 'CREATE TEMPORARY TABLE ingredients_needed(name text);'
+	}
+
+	var query2 = {
+		text: 'INSERT INTO ingredients_needed(name)',
+		values: ['Beef', 'Bread'];
+	}
+
 	// CREATE TEMPORARY TABLE, call immediately.
-	(function createTemporaryTable() {
-		var text = 'CREATE TEMPORARY TABLE ingredients_needed(name text);'
+	function createTemporaryTable() {
 		// promise
 		client
-		.query(text)
+		.query(query1)
 		.then(res => {
 			insertToTemporaryTable()
 		})
 		.catch(e => console.error(e.stack))
-	})();
+	}
 
 	function insertToTemporaryTable() {
-		var text = 'INSERT INTO ingredients_needed(name)'
-		var values = [];
-		// for ea. search term in ingredients array, add row to ingredients_needed
-		ingredients.forEach((ingredient) => {
-			values.push(ingredient);
-		});
 		client
-		.query(text, values)
+		.query(query2)
 		.then(res => {
 			console.log(res.rows);	
 		})
 		.catch(e => console.error(e.stack))
 	}
+
+	createTemporaryTable();
 }
 
 
