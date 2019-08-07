@@ -31,7 +31,7 @@ async function getRecipes() {
 			+ ' INNER JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
 			+ ' LEFT JOIN ingredients_needed ON ingredients_needed.name = ingredients.name'
 			+ ' GROUP BY recipes.name'
-			+ ' HAVING COUNT(*) = (SELECT COUNT(*) FROM ingredients_needed);'
+			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
 	}
 
 	// CREATE TEMPORARY TABLE, call immediately.
@@ -61,7 +61,7 @@ async function getRecipes() {
 		.query(query3)
 		.then(res => {
 			console.log("Checking for recipes");
-			console.log(res.rows);
+			console.log(res);
 		})
 		.catch(e => console.error(e.stack))
 	}
