@@ -9,8 +9,6 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-const models = require('./custom_modules/models/index');
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -42,27 +40,8 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-// connect to database
-const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-function testDb(name, desc, method) {
-	models.Recipe.create({
-	    name: name,
-	    description: desc,
-	    method: method
-	}).then(() => {
-	    console.log("User had no score for channel. Score created.")
-	});
-}
-
-testDb("burger", "A tasty burger recipe", "step 1. Don't burn me.")
+// createRecipe("burger", "A tasty burger recipe", "step 1. Don't burn me.")
 
 // client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
 //   if (err) throw err;

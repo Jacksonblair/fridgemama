@@ -3,7 +3,7 @@ const db = require('../js/db.js')
 var Models = {};
 
 // Recipe model
-const Recipe = db.define('recipe', {
+const Recipe = db.sequelize.define('recipe', {
 	id: {
 		type: Sequelize.INTEGER,
 		primaryKey: true,
@@ -17,7 +17,7 @@ const Recipe = db.define('recipe', {
 });
 
 // Ingredient model
-const Ingredient = db.define('ingredient', {
+const Ingredient = db.sequelize.define('ingredient', {
 	id: {
 		type: Sequelize.INTEGER,
 		primaryKey: true,
@@ -29,7 +29,7 @@ const Ingredient = db.define('ingredient', {
 });
 
 // Recipe_ingredient association table model
-const Recipe_Ingredient = db.define('recipe_ingredient', {
+const Recipe_Ingredient = db.sequelize.define('recipe_ingredient', {
 	recipe_id: {
 		type: Sequelize.INTEGER,
 		references: { model: "recipe", key: "id" }
