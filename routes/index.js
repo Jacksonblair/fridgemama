@@ -22,7 +22,7 @@ async function getRecipes() {
 
 	var query2 = {
 		text: 'INSERT INTO ingredients_needed(name)',
-		values: ['Beef', 'Bread'];
+		values: ['Beef', 'Bread']
 	}
 
 	// CREATE TEMPORARY TABLE, call immediately.
