@@ -29,7 +29,7 @@ async function getRecipes() {
 			+ ' FROM recipes'
 			+ ' INNER JOIN recipe_ingredients ON recipes.id = recipe_ingredients.recipe_id'
 			+ ' INNER JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
-			+ ' LEFT JOIN ingredients_needed ON ingredients_needed.name = ingredients.name'
+			+ ' RIGHT JOIN ingredients_needed ON ingredients_needed.name = ingredients.name'
 			+ ' GROUP BY recipes.name'
 			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
 	}
