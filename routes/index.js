@@ -5,6 +5,8 @@ const db = require('../custom_modules/js/db.js')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	var stuff = ['Bread', 'Beer'];
+	getRecipes(stuff);
 	res.render('index', { title: 'Fridgemama' });
 });
 
@@ -44,9 +46,6 @@ async function getRecipes(ingredients) {
 	}
 }
 
-var stuff = ['Bread', 'Beer'];
-
-getRecipes(stuff);
 
 /*
 CREATE TEMPORARY TABLE ingredients_needed(name text);
