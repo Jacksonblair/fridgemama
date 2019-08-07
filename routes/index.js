@@ -24,8 +24,18 @@ async function getRecipes() {
 		values: ['Bread', 'Beef']
 	}
 
+	var query3 = {
+		text: 'SELECT recipes.name'
+			+ ' FROM recipes'
+			+ ' INNER JOIN recipe_ingredients ON recipes.id = recipe_ingredients.recipe_id'
+			+ ' INNER JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
+			+ ' LEFT JOIN ingredients_needed ON ingredients_needed.name = ingredients.name'
+			+ ' GROUP BY recipes.name'
+			+ ' HAVING COUNT(*) = (SELECT COUNT(*) FROM ingredients_needed);'
+	}
+
 	// CREATE TEMPORARY TABLE, call immediately.
-	function createTemporaryTable() {
+	(function createTemporaryTable() {
 		// promise
 		client
 		.query(query1)
@@ -34,23 +44,28 @@ async function getRecipes() {
 			insertToTemporaryTable()
 		})
 		.catch(e => console.error(e.stack))
-	}
+	})();
 
 	function insertToTemporaryTable() {
 		client
 		.query(query2)
 		.then(res => {
 			console.log("Added ingredients_needed");
-			client
-			.query('SELECT * FROM ingredients_needed;')
-			.then(res => {
-				console.log(res);
-			}).catch(e => console.error(e.stack))
+			searchForRecipes();
 		})
 		.catch(e => console.error(e.stack))
 	}
 
-	createTemporaryTable();
+	function searchForRecipes() {
+		client
+		.query(query3)
+		.then(res => {
+			console.log("Checking for recipes");
+			console.log(res.rows);
+		})
+		.catch(e => console.error(e.stack))
+	}
+
 }
 
 getRecipes();
