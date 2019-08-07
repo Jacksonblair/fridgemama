@@ -21,7 +21,7 @@ async function getRecipes(ingredients) {
 	(function createTemporaryTable() {
 		var text = 'CREATE TEMPORARY TABLE ingredients_needed(name text);'
 		// promise
-		db.client
+		client
 		.query(text)
 		.then(res => {
 			insertToTemporaryTable()
@@ -36,7 +36,7 @@ async function getRecipes(ingredients) {
 		ingredients.forEach((ingredient) => {
 			values.push(ingredient);
 		});
-		db.client
+		client
 		.query(text, values)
 		.then(res => {
 			console.log(res.rows);	
