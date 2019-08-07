@@ -41,7 +41,11 @@ async function getRecipes() {
 		.query(query2)
 		.then(res => {
 			console.log("Added ingredients_needed");
-			console.log(res.rows);	
+			client
+			.query('SELECT * FROM ingredients_needed;')
+			.then(res => {
+				console.log(res);
+			}).catch(e => console.error(e.stack))
 		})
 		.catch(e => console.error(e.stack))
 	}
