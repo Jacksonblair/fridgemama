@@ -5,7 +5,8 @@ const client = require('../custom_modules/js/client');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	getRecipes();
+	var terms = ['Beef', 'Bread'];
+	getRecipes(terms);
 	res.render('index', { title: 'Fridgemama' });
 });
 
@@ -14,7 +15,6 @@ router.get('/results', function(req, res, next) {
 });
 
 async function getRecipes(ingredients) {
-
 	console.log("Starting getRecipes()");
 
 	// CREATE TEMPORARY TABLE, call immediately.
