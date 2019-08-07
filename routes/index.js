@@ -5,7 +5,6 @@ const client = require('../custom_modules/js/client');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	getRecipes();
 	res.render('index', { title: 'Fridgemama' });
 });
 
@@ -21,8 +20,8 @@ async function getRecipes() {
 	}
 
 	var query2 = {
-		text: 'INSERT INTO ingredients_needed(name)',
-		values: ['Beef', 'Bread']
+		text: 'INSERT INTO ingredients_needed(name) VALUES($1)($2)',
+		values: ['Bread', 'Beef']
 	}
 
 	// CREATE TEMPORARY TABLE, call immediately.
@@ -31,6 +30,7 @@ async function getRecipes() {
 		client
 		.query(query1)
 		.then(res => {
+			console.log("Added temporary table");
 			insertToTemporaryTable()
 		})
 		.catch(e => console.error(e.stack))
@@ -40,6 +40,7 @@ async function getRecipes() {
 		client
 		.query(query2)
 		.then(res => {
+			console.log("Added ingredients_needed");
 			console.log(res.rows);	
 		})
 		.catch(e => console.error(e.stack))
@@ -48,5 +49,6 @@ async function getRecipes() {
 	createTemporaryTable();
 }
 
+getRecipes();
 
 module.exports = router;
