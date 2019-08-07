@@ -35,7 +35,7 @@ async function getRecipes() {
 	}
 
 	// CREATE TEMPORARY TABLE, call immediately.
-	(function createTemporaryTable() {
+	function createTemporaryTable() {
 		// promise
 		client
 		.query(query1)
@@ -44,7 +44,7 @@ async function getRecipes() {
 			insertToTemporaryTable()
 		})
 		.catch(e => console.error(e.stack))
-	})();
+	};
 
 	function insertToTemporaryTable() {
 		client
@@ -66,6 +66,7 @@ async function getRecipes() {
 		.catch(e => console.error(e.stack))
 	}
 
+	createTemporaryTable();
 }
 
 getRecipes();
