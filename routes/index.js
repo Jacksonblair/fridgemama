@@ -61,7 +61,7 @@ async function getRecipes() {
 		.query(query3)
 		.then(res => {
 			console.log("Checking for recipes");
-			console.log(res.rows);
+			console.log(res);
 		})
 		.catch(e => console.error(e.stack))
 	}
