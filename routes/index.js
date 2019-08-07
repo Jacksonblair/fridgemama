@@ -20,8 +20,8 @@ async function getRecipes() {
 	}
 
 	var query2 = {
-		text: 'INSERT INTO ingredients_needed(name) VALUES($1),($2)',
-		values: ['Bread', 'Beef']
+		text: 'INSERT INTO ingredients_needed(name) VALUES($1)',
+		values: ['Bread']
 	}
 
 	var query3 = {
