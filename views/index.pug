@@ -3,30 +3,21 @@ include header
 h1= title
 p Welcome to #{title}
 
-div(class="ui search")
-	div(class="ui icon input")
-		input(class="prompt" type="text" placeholder="Search ingredients...")
-		i(class="search icon")
-	div(class="results")
+select(class="ui fluid search dropdown" multiple="")
 
 script.
-	window.onload = function() {
-
-		var content = [
-		  { name: 'Beef' },
-		  { name: 'Bread' },
-		  { name: 'Lettuce' },
-		  { name: 'Eggs' }
-		];
-
-		$('.ui.search')
-		.search({
-	        type: 'standard',
-			source: content,
-		    searchFields: ['name'],
-		});
-	}
-
-
+	$('.ui.dropdown')
+	  .dropdown({
+	    values: [
+	      {
+	        name: 'Male',
+	        value: 'male'
+	      },
+	      {
+	        name     : 'Female',
+	        value    : 'female'
+	      }
+	    ]
+	  });
 
 include footer
