@@ -7,7 +7,9 @@ var ingredients = [
 
 $('.ui.search')
 	.search({
-		source: ingredients
+		source: ingredients,
+	    searchFields   : [
+	      'name'
+	    ]
 	})
-	console.log("searching");
 ;
