@@ -1,4 +1,4 @@
-$(document).ready(function () {
+window.onload = function() {
 
 	var ingredients = [
 	  { name: 'Beef' },
@@ -9,12 +9,13 @@ $(document).ready(function () {
 
 	$('.ui.search')
 		.search({
+            type: 'standard',
 			source: ingredients,
 		    searchFields: [
 		      'name'
 		    ]
 		})
 	;
-	
-});
+
+}
 
