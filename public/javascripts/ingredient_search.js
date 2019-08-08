@@ -1,15 +1,20 @@
-var ingredients = [
-  { name: 'Beef' },
-  { name: 'Bread' },
-  { name: 'Lettuce' },
-  { name: 'Eggs' }
-];
+$(document).ready(function () {
 
-$('.ui.search')
-	.search({
-		source: ingredients,
-	    searchFields: [
-	      'name'
-	    ]
-	})
-;
+	var ingredients = [
+	  { name: 'Beef' },
+	  { name: 'Bread' },
+	  { name: 'Lettuce' },
+	  { name: 'Eggs' }
+	];
+
+	$('.ui.search')
+		.search({
+			source: ingredients,
+		    searchFields: [
+		      'name'
+		    ]
+		})
+	;
+	
+});
+
