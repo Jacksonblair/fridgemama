@@ -1,6 +1,6 @@
 window.onload = function() {
 
-	var ingredients = [
+	var content = [
 	  { name: 'Beef' },
 	  { name: 'Bread' },
 	  { name: 'Lettuce' },
@@ -8,14 +8,13 @@ window.onload = function() {
 	];
 
 	$('.ui.search')
-		.search({
-            type: 'standard',
-			source: ingredients,
-		    searchFields: [
-		      'name'
-		    ]
-		})
-	;
+	.search({
+        type: 'standard',
+		source: content,
+	    searchFields: [
+	      'name'
+	    ]
+	});
 
 }
 
