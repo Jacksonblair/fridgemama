@@ -13,7 +13,7 @@ window.onload = function() {
 		source: content,
 	    searchFields: [
 	      'name'
-	    ]
+	    ],
 	});
 
 }
