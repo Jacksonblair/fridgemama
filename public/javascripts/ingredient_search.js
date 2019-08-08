@@ -6,6 +6,7 @@ var ingredients = [
 ];
 
 $('.ui.search')
+	console.log("searching");
   .search({
     source: ingredients
   })
