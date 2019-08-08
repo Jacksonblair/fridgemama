@@ -5,4 +5,24 @@ p Welcome to #{title}
 
 select(class="ui fluid search dropdown" multiple="")
 
+script.
+	var ingredients = [
+		{name: 'Beef', value: 'Beef'},
+		{name: 'Eggs', value: 'Eggs'}
+	]
+
+	$('.ui.dropdown')
+	  .dropdown({
+	    values: [
+	      {
+	        name: 'Male',
+	        value: 'male'
+	      },
+	      {
+	        name     : 'Female',
+	        value    : 'female'
+	      }
+	    ]
+	  });
+
 include footer

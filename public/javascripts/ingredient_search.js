@@ -5,5 +5,14 @@ var ingredients = [
 
 $('.ui.dropdown')
   .dropdown({
-    values: ingredients
+    values: [
+      {
+        name: 'Male',
+        value: 'male'
+      },
+      {
+        name     : 'Female',
+        value    : 'female'
+      }
+    ]
   });
