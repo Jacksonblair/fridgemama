@@ -1,4 +1,4 @@
-var content = [
+var ingredients = [
   { name: 'Beef' },
   { name: 'Bread' },
   { name: 'Lettuce' },
@@ -7,6 +7,9 @@ var content = [
 
 $('.ui.search')
 	.search({
-		source: content
+		source: ingredients,
+	    searchFields: [
+	      'name'
+	    ]
 	})
 ;
