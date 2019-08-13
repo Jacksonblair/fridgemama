@@ -9,10 +9,8 @@ form(action="/results" method="post" id="tagform")
 	input(type="text" value="" name="tags" id="taginput")
 	input(type="submit" value="Submit")
 
-- if (results) {
-	for (var i = 0; i < 10; ++i) {
- 	li= array[i]
- 	}
-- }
-
+ul
+  each val, index in {1:'one',2:'two',3:'three'}
+    li= index + ': ' + val
+    
 include footer

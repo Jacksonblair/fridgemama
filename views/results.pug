@@ -1,0 +1,14 @@
+include header
+
+- var results = [];
+
+h1= title
+p Welcome to #{title}
+
+ul
+  each val in results
+    li= val.name
+  else
+    li There are no values
+    
+include footer
