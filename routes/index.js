@@ -30,6 +30,7 @@ async function getRecipes(terms) {
 	var response;
 	var ingredientsText = "";
 	var searchTerms = terms.split(',');
+	var foundRecipes = [];
 
 	searchTerms.forEach((term, i) => {
 		ingredientsText += "($" + (i + 1) + ")";
@@ -47,7 +48,7 @@ async function getRecipes(terms) {
 	}
 
 	var query3 = {
-		text: 'SELECT recipes.name'
+		text: 'SELECT recipes.id, recipes.name, method, description'
 			+ ' FROM recipes'
 			+ ' INNER JOIN recipe_ingredients ON recipes.id = recipe_ingredients.recipe_id'
 			+ ' INNER JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
@@ -56,22 +57,23 @@ async function getRecipes(terms) {
 			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
 	}
 
-	console.log(searchTerms);
-	console.log(query2);
+	var query4 = {
+		text: 'SELECT name, unit, quantity, recipe_id'
+		+ ' FROM ingredients'
+		+ ' JOIN recipe_ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
+		+ ' WHERE recipe_id IN (1, 2);'
+	}
 
+	// CREATE TEMPORARY TABLE
+	client
+	.query(query1)
+	.then(res => {
+		console.log("Added temporary table");
+		insertToTemporaryTable()
+	})
+	.catch(e => console.error(e.stack))
 
-	// CREATE TEMPORARY TABLE, call immediately.
-	function createTemporaryTable() {
-		// promise
-		client
-		.query(query1)
-		.then(res => {
-			console.log("Added temporary table");
-			insertToTemporaryTable()
-		})
-		.catch(e => console.error(e.stack))
-	};
-
+	// INSERT TO temporary table
 	function insertToTemporaryTable() {
 		client
 		.query(query2)
@@ -82,19 +84,19 @@ async function getRecipes(terms) {
 		.catch(e => console.error(e.stack))
 	}
 
+	// Search for recipes using temp table
 	function searchForRecipes() {
 		client
 		.query(query3)
 		.then(res => {
-			console.log("Checking for recipes");
-			console.log(res);
-			response = res;
-			return response;
+			console.log("Found recipes");
+			res.forEach((recipe) => {
+				foundRecipes.push(recipe);
+			});
+			console.log(foundRecipes);
 		})
 		.catch(e => console.error(e.stack))
 	}
-
-	createTemporaryTable();
 }
 
 
