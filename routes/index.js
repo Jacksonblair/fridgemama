@@ -4,8 +4,8 @@ var router = express.Router();
 var bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: true }));
-// const models = require('../custom_modules/models/index');
-// const client = require('../custom_modules/js/client');
+const models = require('../custom_modules/models/index');
+const client = require('../custom_modules/js/client');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
