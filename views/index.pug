@@ -9,7 +9,9 @@ form(action="/results" method="post" id="tagform")
 	input(type="text" value="" name="tags" id="taginput")
 	input(type="submit" value="Submit")
 
-- for (var x = 0; x < #{results}.length; x++)
-	li =results[i]
+- if (results) 
+	for (var x = 0; x < results.length; x++)
+	li= results[i]
+
 
 include footer
