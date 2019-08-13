@@ -39,3 +39,20 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// Render frontend
+
+/*var express = require('express'),
+	app 	= express(),
+	router	= express.Router(),
+	pug		= require('pug'),
+	fs 		= require('fs');
+
+function renderFrontend() {
+    // Re-render the static viewer html
+    // pug.renderFile renders a pug file to HTML.
+    let viewerRender = pug.renderFile('views/index.pug');
+    fs.writeFileSync('frontend/index.html', viewerRender);    
+}
+
+*/

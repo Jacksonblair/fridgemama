@@ -1,27 +1,49 @@
 var express = require('express');
+var app = express();
 var router = express.Router();
-const models = require('../custom_modules/models/index');
-const client = require('../custom_modules/js/client');
+var bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({ extended: true }));
+// const models = require('../custom_modules/models/index');
+// const client = require('../custom_modules/js/client');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Fridgemama' });
 });
 
-router.get('/results', function(req, res, next) {
-	res.render('results', {  });
-});
+router.post('/results', async (req, res, next) => {
+  try {
+	var results = await getStuff(req.body.tags)
+	res.render('index', { index: 'Fridgemama', results: results });
+  } catch (e) {
+    //this will eventually be handled by your error handling middleware
+    next(e) 
+  }
+})
 
-async function getRecipes() {
+
+
+async function getRecipes(terms) {
 	console.log("Starting getRecipes()");
 
-	var query1 = {
-		text: 'CREATE TEMPORARY TABLE ingredients_needed(name text);'
-	}
+	var response;
+	var ingredientsText = "";
+	var searchTerms = terms.split(',');
 
+	searchTerms.forEach((term, i) => {
+		ingredientsText += "($" + (i + 1) + ")";
+		if (!(searchTerms.length === (i + 1))) 
+			ingredientsText += ", ";
+	})
+
+	// temp table query
+	var query1 = { text: 'CREATE TEMPORARY TABLE ingredients_needed(name text);' }
+
+	// search terms query
 	var query2 = {
-		text: 'INSERT INTO ingredients_needed(name) VALUES($1), ($2), ($3)',
-		values: ['Bread', 'Beef', 'Lettuce']
+		text: 'INSERT INTO ingredients_needed(name) VALUES' + ingredientsText,
+		values: searchTerms
 	}
 
 	var query3 = {
@@ -33,6 +55,7 @@ async function getRecipes() {
 			+ ' GROUP BY recipes.name'
 			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
 	}
+}
 
 	// CREATE TEMPORARY TABLE, call immediately.
 	function createTemporaryTable() {
@@ -62,13 +85,10 @@ async function getRecipes() {
 		.then(res => {
 			console.log("Checking for recipes");
 			console.log(res);
+			response = res;
+			return response;
 		})
 		.catch(e => console.error(e.stack))
 	}
-
-	createTemporaryTable();
-}
-
-getRecipes();
 
 module.exports = router;

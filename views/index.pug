@@ -3,26 +3,10 @@ include header
 h1= title
 p Welcome to #{title}
 
-select(class="ui fluid search dropdown" multiple="")
-
-script.
-	var ingredients = [
-		{name: 'Beef', value: 'Beef'},
-		{name: 'Eggs', value: 'Eggs'}
-	]
-
-	$('.ui.dropdown')
-	  .dropdown({
-	    values: [
-	      {
-	        name: 'Male',
-	        value: 'male'
-	      },
-	      {
-	        name     : 'Female',
-	        value    : 'female'
-	      }
-	    ]
-	  });
+div(class="ui container" id="maincontainer")
+	input(type="text" id="searchField")
+form(action="/results" method="post" id="tagform")
+	input(type="text" value="" name="tags" id="taginput")
+	input(type="submit" value="Submit")
 
 include footer

@@ -1,4 +1,5 @@
 // connect to database & init Sequelize obj
+
 const { Client } = require('pg');
 
 const client = new Client({
