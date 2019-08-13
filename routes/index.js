@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
 router.post('/results', async (req, res, next) => {
   try {
 	var results = await getRecipes(req.body.tags)
-	res.render('index', { index: 'Fridgemama', results: results });
+	res.render('index', { title: 'Fridgemama', results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware
     next(e) 
@@ -98,6 +98,8 @@ async function getRecipes(terms) {
 		})
 		.catch(e => console.error(e.stack))
 	}
+
+	return foundRecipes;
 }
 
 
