@@ -56,6 +56,10 @@ async function getRecipes(terms) {
 			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
 	}
 
+	console.log(searchTerms);
+	console.log(query2);
+
+
 	// CREATE TEMPORARY TABLE, call immediately.
 	function createTemporaryTable() {
 		// promise
