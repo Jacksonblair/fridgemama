@@ -90,10 +90,11 @@ async function getRecipes(terms) {
 		.query(query3)
 		.then(res => {
 			console.log("Found recipes");
-			res.forEach((recipe) => {
+			res.rows.forEach((recipe) => {
 				foundRecipes.push(recipe);
 			});
 			console.log(foundRecipes);
+			client.end();
 		})
 		.catch(e => console.error(e.stack))
 	}
