@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/results', async (req, res, next) => {
   try {
-	var results = await getStuff(req.body.tags)
+	var results = await getRecipes(req.body.tags)
 	res.render('index', { index: 'Fridgemama', results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware
