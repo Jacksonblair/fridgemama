@@ -29,7 +29,7 @@ async function getRecipes(terms) {
 
 	var response;
 	var ingredientsText = "";
-	var searchTerms = terms.split(',');
+	var searchTerms = terms.split(',') + ";";
 	var foundRecipes = [];
 
 	searchTerms.forEach((term, i) => {
