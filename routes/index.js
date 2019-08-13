@@ -48,13 +48,13 @@ async function getRecipes(terms) {
 	}
 
 	var query3 = {
-		text: 'SELECT recipes.id, recipes.name, method, description'
+		text: 'SELECT recipes.id, recipes.name, count(ingredients_needed.name) AS MATCHES, count(ingredients.name) AS REQUIRED, method,description'
 			+ ' FROM recipes'
 			+ ' INNER JOIN recipe_ingredients ON recipes.id = recipe_ingredients.recipe_id'
 			+ ' INNER JOIN ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
-			+ ' RIGHT JOIN ingredients_needed ON ingredients_needed.name = ingredients.name'
+			+ ' LEFT JOIN ingredients_needed ON ingredients_needed.name = ingredients.name'
 			+ ' GROUP BY recipes.id'
-			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
+			+ ' HAVING COUNT(ingredients.name) <= COUNT(ingredients_needed.name);'
 	}
 
 	var query4 = {
