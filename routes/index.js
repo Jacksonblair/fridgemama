@@ -55,7 +55,6 @@ async function getRecipes(terms) {
 			+ ' GROUP BY recipes.name'
 			+ ' HAVING COUNT(*) <= (SELECT COUNT(*) FROM ingredients_needed);'
 	}
-}
 
 	// CREATE TEMPORARY TABLE, call immediately.
 	function createTemporaryTable() {
@@ -90,5 +89,10 @@ async function getRecipes(terms) {
 		})
 		.catch(e => console.error(e.stack))
 	}
+
+	createTemporaryTable();
+}
+
+
 
 module.exports = router;
