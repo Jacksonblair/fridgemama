@@ -69,7 +69,7 @@ async function getRecipes(terms) {
 	}
 
 	// CREATE TEMPORARY TABLE
-	await client.connect();
+	client.connect();
 
 	client
 	.query(query1)
@@ -129,7 +129,7 @@ async function getRecipes(terms) {
 					}
 				}
 			});
-			await client.end();
+			client.end();
 		});
 	}
 
