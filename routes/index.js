@@ -90,7 +90,7 @@ async function getRecipes(terms) {
 
 	// Search for recipes using temp table
 	function searchForRecipes() {
-		var recipe_ids; // hold string of ID's to pass to next query.
+		var recipe_ids = ""; // hold string of ID's to pass to next query.
 		client
 		.query(query3)
 		.then(res => {
@@ -98,11 +98,11 @@ async function getRecipes(terms) {
 			res.rows.forEach((recipe) => {
 				foundRecipes.push(recipe);
 				// check if is first id and doesnt need a preceding comma
-				recipe_ids += String(recipe.id);
+				recipe_ids += (recipe_ids) ? ", " + String(recipe.id) : String(recipe.id);
 			});
 			console.log(foundRecipes);
 			console.log(recipe_ids);
-			// getIngredientsForRecipes(recipe_ids);
+			getIngredientsForRecipes(recipe_ids);
 		})
 		.catch(e => console.error(e.stack))
 	}
