@@ -1,12 +1,16 @@
 var mainContainer = document.getElementById("maincontainer");
+var mainSearchInput = document.getElementById("mainsearchinput");
 var tagInput = document.getElementById("taginput");
+var tagsList = document.getElementById("tagslist");
+var resultsDiv = document.getElementById("results");
 var matchArray = [];
-var search = document.getElementById("searchField");
+var search = document.getElementById("searchfield");
 var resultDivs = [];
 
 var terms = [
     'Bread', 'Sourdough Bread', 'Vanilla essence', 'Durian', 'Cheese', 'Beef', 'Egg', 'Trout', 'Mushroom', 'Coffee', 'Lettuce', 'Tea', 'Brioche', 'Carrot', 'Onion', 'Garlic'
     ];
+
 
 search.onkeyup = function() {
     var value = search.value;
@@ -14,7 +18,7 @@ search.onkeyup = function() {
 
     // empty array of element and remove childs from container
     matchArray.forEach((element) => {
-        maincontainer.removeChild(element);
+        resultsDiv.removeChild(element);
         matchArray = [];
     });
 
@@ -23,26 +27,58 @@ search.onkeyup = function() {
         createSearchItem(matches[i].target);
     }
 
+    // console.log(matches);
+
 }
 
 function clickedResult(element) {
-    console.log(element.innerHTML);
-    // add result to an array, either in text or element form
-    // create 'tag' element, and append to 'tags' div
-        // 'tag' element must have function to delete itself from the 'tags' array, when the x is clicked.
-    // remember how to attach array of search terms to 'submit' button, to send in GET request to server.
+    // console.log(element.innerHTML);
+
+    // add to INVISIBLE input
     if (tagInput.value) { // add comma if term is not first
         tagInput.value += ","
     }
     tagInput.value += element.innerHTML;
+    console.log("Adding to tagInput.html: " + element.innerHTML)
+    console.log(tagInput.value);
+
+    // add 'tag' to VISIBLE list of tags
+    var tag = document.createElement('div');
+    tagsList.appendChild(tag);
+    tag.setAttribute("class", "ui tiny grey basic button");
+    tag.innerHTML = element.innerHTML;
+
+    // remove result from array and from displayed matches
+    resultsDiv.removeChild(element);
+    matchArray.splice(matchArray.indexOf(element), 1);
+}
+
+function removeResult(element) {
+    matchArray[element].splice(element);
 }
 
 function createSearchItem(item) {
     var div = document.createElement('div');
-    maincontainer.appendChild(div);
-    div.classname = "ingredientMatch";
+    resultsDiv.appendChild(div);
     div.innerHTML = item;
+    div.display = "block";
     matchArray.push(div);
+    div.setAttribute("class", "item");
     div.setAttribute("onclick", "clickedResult(this);");
 }
+
+// search results visibility
+$(document).click(function() {
+  $('#results').hide();
+});
+
+$('#mainsearchinput').click(function() { 
+  $('#results').show();
+  return false;
+});
+
+$('#results').click(function() { 
+  $('#results').show();
+  return false;
+});
 

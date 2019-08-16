@@ -1,14 +1,64 @@
 include header
 
-- var results = [];
+div(class="ui grid")
+	div(class="row")
+		div(class="three wide column")
+		div(class="ten wide column" id="maincolumn")
+			h2(class="ui left aligned header")
+				| Your results:
 
-h1= title
-p Welcome to #{title}
+			div
+				each val in results
+					div(class="ui left aligned segment resultsegment")
+						h2(class="recipename")= val.name
+						h4(class="recipedescription") A something something description about this recipe!
+						include gallery
+						div(class="ui segment")
+							div(class="ui stackable grid")
+								div(class="six wide left aligned column resultcontentleft")
+									div(class="ui grid")
+										div(class="row")
+											div(class="eight wide floated column")
+												h3(class="ui header contentsheader") Ingredients:
+											div(class="eight wide right aligned column")
+												h3(class="ui header") Serves: 1 
+													button(class="ui mini button amount") + 
+													button(class="ui mini button amount") - 
+										div(class="row")
+											div(class="sixteen wide floated column")
+												div(class="ui bulleted list")
+													div(class="item")
+														div(class="ingredientquantity") 1
+														div(class="ingredientunit") Teaspoon 
+														div(class="ingredientname") of Food item
+													div(class="item")
+														div(class="ingredientquantity") 1
+														div(class="ingredientunit") Cup 
+														div(class="ingredientname") of another tasty food item
 
-ul
-	each val in results
-		li= val.name
-	else
-		li There are no values
+
+
+								div(class="ten wide left aligned column resultcontentright")
+									h3(class="ui header contentsheader") Method:
+									div(class="ui list")
+										div(class="item") 
+											strong Step 1:
+											div(class="ui list")
+												div(class="item") Do stuff
+										div(class="item") 
+											strong Step 2:
+											div(class="ui list")
+												div(class="item") Do more stuff
+										div(class="item") 
+											strong Step 3:
+											div(class="ui list")
+												div(class="item") Continue to do stuff
+										div(class="item") 
+											strong Step 4:
+											div(class="ui list")
+												div(class="item") Eat the stuff
+						include comments
+				else
+					p There are no values
 
 include footer

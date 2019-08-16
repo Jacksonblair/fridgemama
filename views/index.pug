@@ -1,16 +1,25 @@
 include header
 
-h1= title
-p Welcome to #{title}
+div(class="ui grid")
+	div(class="row")
+		div(class="three wide column")
+		div(class="ten wide column" id="maincolumn")
+				h2(class="ui center aligned header")
+					| Enter some ingredients to begin!
+				div(id="searchcontainer")
+					div(class="ui huge input" id="mainsearchinput")
+						input( type="text" id="searchfield" placeholder="Type something...")
+					div(class="ui middle aligned selection list" id="results")
 
-div(class="ui container" id="maincontainer")
-	input(type="text" id="searchField")
-form(action="/results" method="post" id="tagform")
-	input(type="text" value="" name="tags" id="taginput")
-	input(type="submit" value="Submit")
+				div(id="resultscontainer")
+					div(class="ui basic segment" id="tagslist")
+					form(action="/results" method="post")
+						div(class="ui input")
+							input(type="text" value="" name="tags" id="taginput")
+						input(class="ui button" type="submit" value="Find a recipe!" id="submitbutton")
 
-ul
-  each val, index in {1:'one',2:'two',3:'three'}
-    li= index + ': ' + val
-    
+
+
+	div(class="three wide column")
+
 include footer

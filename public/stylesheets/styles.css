@@ -4,3 +4,129 @@
 	border: 2px solid black;
 	display: block;
 }
+
+#mainheader {
+	margin-bottom: 80px;
+}
+
+h2.ui.header {
+	font-size: 32px;
+}
+
+h3.ui.header {
+    margin-bottom: 0px;
+}
+
+#maincolumn {
+    text-align: center;
+}
+
+#searchcontainer {
+	position: relative;
+	z-index: 2;
+}
+
+#resultscontainer {
+	position: relative;
+	z-index: 1;
+    margin-top: 16px;
+}
+
+#mainsearchinput {
+	margin-top: 10px;
+	width: 30%;
+}
+
+#results {
+	width: 30%;
+    margin: 0 auto;
+	position: absolute;
+    top: 65px;
+    left: 35%;
+    background: white;
+    opacity: 0.8;
+}
+
+#tagslist {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#taginput {
+	display: none;
+}
+
+#submitbutton {
+    margin: 0;
+}
+
+
+/*Results page*/
+
+.recipename {
+	margin-bottom: 3px;
+	font-size: 40px;
+}
+
+.recipedescription {
+	margin-top: 0px;
+	color: grey;
+}
+
+.resultsegment {
+
+}
+
+.ui.segment.resultsegment {
+    border-top: 10px solid rgba(34, 36, 38, 0.15);
+    padding-top: 5px;
+    background: #f6f6f6;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+
+.ingredientquantity {
+    display: inline;
+    margin-right: 10px;
+}
+
+.ingredientunit {
+    display: inline;
+}
+
+.ingredientname {
+	display: inline;
+}
+
+.ui.header.contentsheader {
+    font-size: 25px;
+}
+
+ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
+	font-size: 15px;
+}
+
+ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
+	font-size: 15px;
+}
+
+.ui.mini.button.amount {
+    font-size: 20px;
+    padding: 3px;
+    width: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.ui.grid > .row {
+	padding-bottom: 0px;
+}
+
+.resultcontentright {
+	border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+.ui.image.galleryimage {
+	border-radius: 20px;
+}
+
