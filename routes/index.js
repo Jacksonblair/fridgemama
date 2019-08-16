@@ -118,12 +118,13 @@ async function getRecipes(terms) {
 			console.log("Getting ingredients for recipes")
 			res.rows.forEach((ingredient) => {
 				// add ingredients to correct recipe, matched by recipe id
-				for (var i = 0; i < foundRecipes.length; i++) {
-					if (ingredient.recipe_id === foundRecipes.id) {
-						console.log(ingredient);
-						console.log(foundRecipes[i]);
-					}
-				}
+				console.log(ingredient);
+				// for (var i = 0; i < foundRecipes.length; i++) {
+				// 	if (ingredient.recipe_id === foundRecipes.id) {
+				// 		console.log(ingredient);
+				// 		console.log(foundRecipes[i]);
+				// 	}
+				// }
 			});
 		});
 	}
