@@ -21,7 +21,7 @@ router.post('/results', async (req, res, next) => {
   	console.log(req.body.tags);
 	var results = await getRecipes(req.body.tags)
 	results = [{name: "Burger", method: "Cook me and don't burn me bitch."}, {name: "Souffle", method: "Read a recipe book im complicated af."}];
-	res.render('results', { title: 'Fridgemama', results: results });
+	res.render('results', { results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware
     next(e) 

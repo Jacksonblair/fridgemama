@@ -11,7 +11,7 @@ div(class="ui grid")
 				each val in results
 					div(class="ui left aligned segment resultsegment")
 						h2(class="recipename")= val.name
-						h4(class="recipedescription") A something something description about this recipe!
+						h4(class="recipedescription") val.description
 						include gallery
 						div(class="ui segment")
 							div(class="ui stackable grid")
@@ -24,19 +24,15 @@ div(class="ui grid")
 												h3(class="ui header") Serves: 1 
 													button(class="ui mini button amount") + 
 													button(class="ui mini button amount") - 
-										div(class="row")
-											div(class="sixteen wide floated column")
-												div(class="ui bulleted list")
-													div(class="item")
-														div(class="ingredientquantity") 1
-														div(class="ingredientunit") Teaspoon 
-														div(class="ingredientname") of Food item
-													div(class="item")
-														div(class="ingredientquantity") 1
-														div(class="ingredientunit") Cup 
-														div(class="ingredientname") of another tasty food item
-
-
+											div(class="row")
+												div(class="sixteen wide floated column")
+													div(class="ui bulleted list")
+														each ingredient in val.ingredients
+															div(class="item")
+																div(class="ingredientquantity") ingredient.quantity
+																div(class="ingredientunit") ingredient.unit
+																div(class="ingredientname") ingredient.name
+																
 
 								div(class="ten wide left aligned column resultcontentright")
 									h3(class="ui header contentsheader") Method:
