@@ -4,8 +4,8 @@ var router = express.Router();
 var bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: true }));
-const models = require('../custom_modules/models/index');
-const client = require('../custom_modules/js/client');
+// const models = require('../custom_modules/models/index');
+// const client = require('../custom_modules/js/client');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -19,8 +19,30 @@ router.get('/results', function(req, res, next) {
 router.post('/results', async (req, res, next) => {
   try {
   	console.log(req.body.tags);
-	var results = await getRecipes(req.body.tags)
-	results = [{name: "Burger", method: "Cook me and don't burn me bitch."}, {name: "Souffle", method: "Read a recipe book im complicated af."}];
+	// var results = await getRecipes(req.body.tags)
+	results = [
+		{
+			name: "Burger", 
+			method: "Cook me and don't burn me bitch.",
+			ingredients: [
+			{ 
+				name: "Bread",
+				quantity: "1",
+				unit: "Cup"
+				}
+			]
+		},
+		{	name: "Souffle", 
+			method: "Read a recipe book im complicated af.",
+			ingredients: [
+			{ 
+				name: "Bread",
+				quantity: "1",
+				unit: "Cup"
+				}
+			]
+		}
+	];
 	res.render('results', { results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware
