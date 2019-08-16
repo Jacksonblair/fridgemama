@@ -98,7 +98,7 @@ async function getRecipes(terms) {
 			res.rows.forEach((recipe) => {
 				foundRecipes.push(recipe);
 				// check if is first id and doesnt need a preceding comma
-				recipe_ids += (recipe_ids) ? ", " + String(recipe.recipe_id) : String(recipe.recipe_id);
+				recipe_ids += (recipe_ids) ? ", " + String(recipe.id) : String(recipe.id);
 			});
 			console.log(foundRecipes);
 			console.log(recipe_ids);
