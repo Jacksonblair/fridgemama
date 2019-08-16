@@ -90,33 +90,38 @@ async function getRecipes(terms) {
 
 	// Search for recipes using temp table
 	function searchForRecipes() {
+		var recipe_ids; // hold string of ID's to pass to next query.
 		client
 		.query(query3)
 		.then(res => {
 			console.log("Found recipes");
 			res.rows.forEach((recipe) => {
 				foundRecipes.push(recipe);
+				// check if is first id and doesnt need a preceding comma
+				recipe_ids += (recipe_ids) ? ", " + String(recipe.recipe_id) : String(recipe.recipe_id);
 			});
 			console.log(foundRecipes);
-			getIngredientsForRecipes();
+			console.log(recipe_ids);
+			getIngredientsForRecipes(recipe_ids);
 		})
 		.catch(e => console.error(e.stack))
 	}
 
 	// Get ingredient details and append to 'foundRecipes'
-	function getIngredientsForRecipes() {
+	function getIngredientsForRecipes(ids) {
 		client
-		.query(query4)
+		.query( 'SELECT name, unit, quantity, recipe_id'
+		+ ' FROM ingredients'
+		+ ' JOIN recipe_ingredients ON ingredients.id = recipe_ingredients.ingredient_id'
+		+ ' WHERE recipe_id IN (' + ids + ');')
 		.then(res => {
 			console.log("Getting ingredients for recipes")
 			res.rows.forEach((ingredient) => {
 				// add ingredients to correct recipe, matched by recipe id
 				for (var i = 0; i < foundRecipes.length; i++) {
 					if (ingredient.recipe_id === foundRecipes.id) {
-						foundRecipes[i].ingredients = [];
-						foundRecipes[i].ingredients.push(ingredient);
-						console.log(ingredient.recipe_id);
-						console.log(foundRecipes.id);
+						console.log(ingredient);
+						console.log(foundRecipes[i]);
 					}
 				}
 			});
