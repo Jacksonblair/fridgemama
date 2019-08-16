@@ -120,7 +120,6 @@ async function getRecipes(terms) {
 					}
 				}
 			});
-			client.end();
 		});
 	}
 
