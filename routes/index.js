@@ -69,6 +69,8 @@ async function getRecipes(terms) {
 	}
 
 	// CREATE TEMPORARY TABLE
+	client.connect();
+
 	client
 	.query(query1)
 	.then(res => {
@@ -127,6 +129,7 @@ async function getRecipes(terms) {
 					}
 				}
 			});
+			client.end();
 		});
 	}
 
