@@ -7,6 +7,4 @@ const client = new Client({
   ssl: true,
 });
 
-client.connect()
-
 module.exports = client;
