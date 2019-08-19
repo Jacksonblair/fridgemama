@@ -23,19 +23,35 @@ router.post('/results', async (req, res, next) => {
 	results = [
 		{
 			name: "Burger", 
+			description: "A tasty burger",
 			method: "Cook me and don't burn me bitch.",
 			ingredients: [
-			{ 
+				{ 
 				name: "Bread",
-				quantity: "1",
-				unit: "Cup"
-				}
+				quantity: 2,
+				unit: "Slice",
+				increment: 2
+				},
+				{ 
+				name: "Beef",
+				quantity: 1.5,
+				unit: "Cup",
+				increment: 1.5
+				},				
+				{ 
+				name: "Lettuce",
+				quantity: 3,
+				unit: "Leaf",
+				increment: 3
+				},
 			]
+			
 		},
 		{	name: "Souffle", 
+			description: "A tasty souffle",
 			method: "Read a recipe book im complicated af.",
 			ingredients: [
-			{ 
+				{ 
 				name: "Bread",
 				quantity: "1",
 				unit: "Cup"
@@ -126,9 +142,15 @@ async function getRecipes(terms) {
 			});
 			console.log(foundRecipes);
 			console.log(recipe_ids);
+			formatMethod();
 			getIngredientsForRecipes(recipe_ids);
 		})
 		.catch(e => console.error(e.stack))
+	}
+
+	// Change method text to individual steps.
+	function formatMethod() {
+		// Separate string by characters.
 	}
 
 	// Get ingredient details and append to 'foundRecipes'
@@ -157,7 +179,5 @@ async function getRecipes(terms) {
 
 	return foundRecipes;
 }
-
-
 
 module.exports = router;

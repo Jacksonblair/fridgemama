@@ -8,31 +8,35 @@ div(class="ui grid")
 				| Your results:
 
 			div
-				each val in results
+				each recipe in results
 					div(class="ui left aligned segment resultsegment")
-						h2(class="recipename")= val.name
-						h4(class="recipedescription") val.description
+						h2(class="recipename")= recipe.name
+						h4(class="recipedescription")= recipe.description
 						include gallery
 						div(class="ui segment")
 							div(class="ui stackable grid")
 								div(class="six wide left aligned column resultcontentleft")
 									div(class="ui grid")
 										div(class="row")
-											div(class="eight wide floated column")
+											div(class="eight wide floated stackable column")
 												h3(class="ui header contentsheader") Ingredients:
-											div(class="eight wide right aligned column")
-												h3(class="ui header") Serves: 1 
-													button(class="ui mini button amount") + 
-													button(class="ui mini button amount") - 
+											div(class="eight wide right aligned stackable column")
+												h3(class="ui header")
+													span Serves 
+													span(class="recipeserves" + recipe.name) 1 
+													button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)") + 
+													button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)") - 
 											div(class="row")
-												div(class="sixteen wide floated column")
+												div(class="sixteen wide floated column ingredientlistcolumn")
 													div(class="ui bulleted list")
-														each ingredient in val.ingredients
+														each ingredient in recipe.ingredients
 															div(class="item")
-																div(class="ingredientquantity") ingredient.quantity
-																div(class="ingredientunit") ingredient.unit
-																div(class="ingredientname") ingredient.name
-																
+																span(class="ingredientquantity" + recipe.name)= ingredient.quantity 
+																| 
+																span(class="ingredientunit")= ingredient.unit 
+																|  of  
+																span(class="ingredientname")= ingredient.name 
+
 
 								div(class="ten wide left aligned column resultcontentright")
 									h3(class="ui header contentsheader") Method:
@@ -58,3 +62,4 @@ div(class="ui grid")
 					p There are no values
 
 include footer
+script(src="/javascripts/results.js")

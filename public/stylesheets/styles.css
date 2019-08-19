@@ -130,3 +130,6 @@ ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
 	border-radius: 20px;
 }
 
+.ingredientlistcolumn {
+	padding-left: 1rem;
+}
