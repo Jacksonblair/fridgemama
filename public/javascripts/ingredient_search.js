@@ -45,7 +45,11 @@ function clickedResult(element) {
     // add 'tag' to VISIBLE list of tags
     var tag = document.createElement('div');
     tagsList.appendChild(tag);
-    tag.setAttribute("class", "ui tiny grey basic button");
+    tag.setAttribute("class", "tagbutton ui blue button");
+    tag.style.fontFamily = "To-japan"
+    tag.style.fontSize = "13px"
+    tag.style.fontWeight = "normal"
+    tag.style.margin = "5px"
     tag.innerHTML = element.innerHTML;
 
     // remove result from array and from displayed matches
@@ -65,6 +69,7 @@ function createSearchItem(item) {
     matchArray.push(div);
     div.setAttribute("class", "item");
     div.setAttribute("onclick", "clickedResult(this);");
+    div.style.fontFamily = "To-japan";
 }
 
 // search results visibility
@@ -81,4 +86,3 @@ $('#results').click(function() {
   $('#results').show();
   return false;
 });
-

@@ -1,3 +1,56 @@
+@font-face {
+    font-family: 'Starborn';
+    src: url('/fonts/Starborn.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'To-japan';
+    src: url('/fonts/To Japan.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Timoteo';
+    src: url('/fonts/Timoteo.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Swallow Falls';
+    src: url('/fonts/Swallow Falls.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'German Beauty';
+    src: url('/fonts/German Beauty.ttf') format('truetype');
+}
+
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url('/images/tile01.jpg');
+}
+
+.Site-content {
+  flex: 1;
+}
+
+.Footer-content {
+	height: 70px;
+    background-color: #ffec91;
+    border-top: 5px solid #fffde2;
+}
+
+/* Index page*/
+
+#mainlogo {
+	font-family: Starborn;
+    font-size: 80px;
+    margin-top: 25%;
+    text-shadow: 4px 4px 1px white;
+    height: 100px;
+}
+
 .ingredientMatch {
 	width: 200px;
 	height: 50px;
@@ -26,6 +79,16 @@ h3.ui.header {
 	z-index: 2;
 }
 
+#searchfield {
+	border-radius: 20px 0px 0px 20px;
+	font-family: 'To-japan';
+    font-size: 15px;
+}
+
+#searchform {
+	display: inline;
+}
+
 #resultscontainer {
 	position: relative;
 	z-index: 1;
@@ -50,6 +113,7 @@ h3.ui.header {
 #tagslist {
 	width: 50%;
 	margin: 0 auto;
+	padding: 0px;
 }
 
 #taginput {
@@ -57,9 +121,40 @@ h3.ui.header {
 }
 
 #submitbutton {
-    margin: 0;
+    margin-left: 0px;
+	border-radius: 0px 20px 20px 0px;
+	font-family: 'To-japan';
+    font-size: 15px;
+    font-weight: 100;
 }
 
+.tagbutton.ui.button {
+    font-size: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+/* Footer content */
+
+.ui.header.footer {
+    font-family: To-japan;
+    font-weight: normal;
+    font-size: 20px;
+    margin-top: 1px;
+    /*border-bottom: 2px solid #ef9c004d;*/
+    color: #ef9c00;
+    margin-bottom: 4px;
+	padding-top: 14px;
+    text-shadow: 2px 2px 1px white;
+}
+
+#poprecipelist {
+	margin-top: 0px;
+}
+
+#poprecipelist .item {
+	font-family: Starborn;
+	text-align: left
+}
 
 /*Results page*/
 
