@@ -147,15 +147,6 @@ h3.ui.header {
     text-shadow: 2px 2px 1px white;
 }
 
-#poprecipelist {
-	margin-top: 0px;
-}
-
-#poprecipelist .item {
-	font-family: Starborn;
-	text-align: left
-}
-
 /*Results page*/
 
 .recipename {
