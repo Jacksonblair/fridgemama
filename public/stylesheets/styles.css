@@ -39,10 +39,11 @@
 
 #mainlogo {
 	font-family: Starborn;
-    font-size: 6vw;
+    font-size: 90px;
     margin-top: 250px;
     text-shadow: 4px 4px 1px white;
     height: 100px;
+    position: relative;
 }
 
 .ingredientMatch {
@@ -127,30 +128,108 @@ h3.ui.header {
     padding: 5px 10px 5px 10px;
 }
 
+.indextitleicon {
+	position: absolute;
+	height: 140px;
+	width: 80px;
+	/*border: 1px solid black;*/
+	background-repeat: no-repeat;
+}
+
+
+#titletext {
+	position: relative;
+    display: inline;
+}
+
+#titletext div:nth-child(1) {
+	background-image: url(/images/Pan.png);
+    top: -50px;
+    left: -70px;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+#titletext div:nth-child(2) {
+	background-image: url(/images/Apple.png);
+    top: -100px;
+    left: 70px;
+/*    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg);*/
+}
+
+#titletext div:nth-child(3) {
+	background-image: url(/images/Carrot.png);
+	top: -150px;
+    left: 180px;
+    -webkit-transform: rotate(220deg);
+    -moz-transform: rotate(220deg);
+    -o-transform: rotate(220deg);
+    -ms-transform: rotate(220deg);
+    transform: rotate(220deg);
+}
+
+#titletext div:nth-child(4) {
+	background-image: url(/images/Knife.png);
+    top: -140px;
+    left: 330px;
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+}
+
+#titletext div:nth-child(5) {
+	background-image: url(/images/Pan.png);
+    top: -120px;
+    left: 460px;
+    -webkit-transform: rotate(30deg);
+    -moz-transform: rotate(30deg);
+    -o-transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+
+#titletext div:nth-child(6) {
+	background-image: url(/images/Apple.png);
+    top: -90px;
+    left: 590px;
+/*    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    transform: rotate(-40deg);*/
+}
+
+#titletext div:nth-child(7) {
+	background-image: url(/images/Carrot.png);
+	top: -40px;
+    left: 700px;
+    -webkit-transform: rotate(150deg);
+    -moz-transform: rotate(150deg);
+    -o-transform: rotate(150deg);
+    -ms-transform: rotate(150deg);
+    transform: rotate(150deg);
+}
+
+
 /* Footer content */
 
 
 .Footer-content {
-	height: 70px;
+	height: 65px;
     background-color: #ffec91;
     border-top: 5px solid #fffde2;
     text-align: center;
 	background-image: url(/images/tile02.png);
-    background-size: 1%;
-}
-
-
-.ui.header.footer {
-    font-family: To-japan;
-    font-weight: normal;
-    font-size: 20px;
-    /*border-bottom: 2px solid #ef9c004d;*/
-    color: #ef9c00;
-	padding-top: 16px;
-    text-shadow: 2px 2px 1px white;
-    height: 100%;
-    box-sizing: border-box;
-    transition: 0.2s all;
+    background-size: 0.7%;
 }
 
 .ui.header.footer:hover {
@@ -159,8 +238,31 @@ h3.ui.header {
 
 .indexfooterdiv {
     display: inline-block;
-    width: 200px;
+    width: 250px;
     height: 100%;
+}
+
+.indexfooterdiv .ui.button {
+	margin-top: 10px;
+    border-radius: 20px;
+    background-color: #ff9d24;
+    color: white;
+    font-family: To-japan;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #9a7625;
+	box-shadow: 4px 4px 1px white;
+}
+
+.indexfooterdiv .ui.button:hover {
+	background-color: #ffb254;
+}
+
+.indexfooterdiv:nth-child(1) {
+	text-align: right;
+}
+
+.indexfooterdiv:nth-child(3) {
+	text-align: left;
 }
 
 /*Results page*/
