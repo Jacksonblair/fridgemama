@@ -331,13 +331,13 @@ ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
 Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 */
 
-@media screen and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
 	#searchfield, #submitbutton {
 		font-size: 1.2vw;
 	}
 }
 
-@media screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 	#searchfield, #submitbutton {
 	    font-size: 4vw;
 	    margin: 0 auto;
