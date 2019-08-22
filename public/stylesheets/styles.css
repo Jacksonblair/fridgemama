@@ -43,6 +43,10 @@
   flex: 1;
 }
 
+.ui.grid {
+	margin: 0;
+}
+
 /* Index page*/
 
 #mainlogo {
@@ -97,6 +101,7 @@ h3.ui.header {
 	position: relative;
 	z-index: 1;
     margin-top: 16px;
+    margin-bottom: 100px;
 }
 
 #mainsearchinput {
