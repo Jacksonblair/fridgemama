@@ -59,7 +59,6 @@ router.post('/results', async (req, res, next) => {
 		}
 	];
 
-	results = [];
 	res.render('results', { results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware

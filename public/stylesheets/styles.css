@@ -228,6 +228,10 @@ h3.ui.header {
     background-size: 10px;
 }
 
+.row.servesrow {
+	margin-bottom: 10px;
+}
+
 .recipename {
 	margin-bottom: 3px;
 	font-size: 40px;
@@ -346,6 +350,13 @@ Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 
 /*MOBILE STYLES*/
 @media only screen and (max-width: 480px) {
+
+	/*INDEX PAGE*/
+
+	#resultsmainlogo {
+		font-size: 30px;
+	}
+
 	#searchfield, #submitbutton {
 	    font-size: 4vw;
 	    margin: 0 auto;
@@ -378,12 +389,17 @@ Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 	}
 
 	.indexfooterdiv .ui.button {
-	    font-size: 2vw;
-	    padding: 4px 5px;
+	    font-size: 2.6vw;
+	    padding: 7px 5px;
 	    border-radius: 10px;
 	}
 
 	.Footer-content {
     	height: 50px;
 	}
+
+	/*RECIPES PAGE*/
+
+	
+
 }
