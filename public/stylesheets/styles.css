@@ -32,10 +32,11 @@
 
 
 .Site {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-image: url('/images/tile01.jpg');
+  	display: flex;
+  	min-height: 100vh;
+  	flex-direction: column;
+  	background-image: url('/images/tile01.jpg');
+	background-size: 10%;
 }
 
 .Site-content {
