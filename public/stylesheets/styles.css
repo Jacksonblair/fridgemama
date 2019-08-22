@@ -337,6 +337,8 @@ Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 	}
 }
 
+
+/*MOBILE STYLES*/
 @media only screen and (max-width: 480px) {
 	#searchfield, #submitbutton {
 	    font-size: 4vw;
@@ -362,5 +364,20 @@ Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 
 	.tagbutton.ui.button {
 		font-size: 10px;
+	}
+
+	.indexfooterdiv {
+		display: inline;
+    	margin: 0px 5px;
+	}
+
+	.indexfooterdiv .ui.button {
+	    font-size: 2vw;
+	    padding: 4px 5px;
+	    border-radius: 10px;
+	}
+
+	.Footer-content {
+    	height: 50px;
 	}
 }
