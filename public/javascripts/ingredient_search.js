@@ -47,7 +47,6 @@ function clickedResult(element) {
     tagsList.appendChild(tag);
     tag.setAttribute("class", "tagbutton ui blue button");
     tag.style.fontFamily = "To-japan"
-    tag.style.fontSize = "13px"
     tag.style.fontWeight = "normal"
     tag.style.margin = "5px"
     tag.innerHTML = element.innerHTML;

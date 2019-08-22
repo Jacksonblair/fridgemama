@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-family: 'Starborn';
     src: url('/fonts/Starborn.ttf') format('truetype');
@@ -23,6 +25,11 @@
     src: url('/fonts/German Beauty.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Techna';
+    src: url('/fonts/TechnaSans-Regular.otf') format('opentype');
+}
+
 
 .Site {
   display: flex;
@@ -38,12 +45,13 @@
 /* Index page*/
 
 #mainlogo {
-	font-family: Starborn;
-    font-size: 90px;
-    margin-top: 250px;
-    text-shadow: 4px 4px 1px white;
-    height: 100px;
-    position: relative;
+	margin: 0 auto;
+    margin-top: 200px;
+    background-repeat: no-repeat;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .ingredientMatch {
@@ -77,7 +85,7 @@ h3.ui.header {
 #searchfield {
 	border-radius: 20px 0px 0px 20px;
 	font-family: 'To-japan';
-    font-size: 15px;
+    font-size: 1vw;
 }
 
 #searchform {
@@ -103,6 +111,7 @@ h3.ui.header {
     left: 35%;
     background: white;
     opacity: 0.8;
+    z-index: 2;
 }
 
 #tagslist {
@@ -119,7 +128,7 @@ h3.ui.header {
     margin-left: 0px;
 	border-radius: 0px 20px 20px 0px;
 	font-family: 'To-japan';
-    font-size: 15px;
+    font-size: 1vw;
     font-weight: 100;
 }
 
@@ -128,103 +137,10 @@ h3.ui.header {
     padding: 5px 10px 5px 10px;
 }
 
-.indextitleicon {
-	position: absolute;
-	height: 140px;
-	width: 80px;
-	/*border: 1px solid black;*/
-	background-repeat: no-repeat;
-}
-
-
-#titletext {
-	position: relative;
-    display: inline;
-}
-
-#titletext div:nth-child(1) {
-	background-image: url(/images/Pan.png);
-    top: -50px;
-    left: -70px;
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    -o-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    transform: rotate(30deg);
-}
-
-#titletext div:nth-child(2) {
-	background-image: url(/images/Apple.png);
-    top: -100px;
-    left: 70px;
-/*    -webkit-transform: rotate(-40deg);
-    -moz-transform: rotate(-40deg);
-    -o-transform: rotate(-40deg);
-    -ms-transform: rotate(-40deg);
-    transform: rotate(-40deg);*/
-}
-
-#titletext div:nth-child(3) {
-	background-image: url(/images/Carrot.png);
-	top: -150px;
-    left: 180px;
-    -webkit-transform: rotate(220deg);
-    -moz-transform: rotate(220deg);
-    -o-transform: rotate(220deg);
-    -ms-transform: rotate(220deg);
-    transform: rotate(220deg);
-}
-
-#titletext div:nth-child(4) {
-	background-image: url(/images/Knife.png);
-    top: -140px;
-    left: 330px;
-    -webkit-transform: rotate(-40deg);
-    -moz-transform: rotate(-40deg);
-    -o-transform: rotate(-40deg);
-    -ms-transform: rotate(-40deg);
-    transform: rotate(-40deg);
-}
-
-#titletext div:nth-child(5) {
-	background-image: url(/images/Pan.png);
-    top: -120px;
-    left: 460px;
-    -webkit-transform: rotate(30deg);
-    -moz-transform: rotate(30deg);
-    -o-transform: rotate(30deg);
-    -ms-transform: rotate(30deg);
-    transform: rotate(30deg);
-}
-
-#titletext div:nth-child(6) {
-	background-image: url(/images/Apple.png);
-    top: -90px;
-    left: 590px;
-/*    -webkit-transform: rotate(-40deg);
-    -moz-transform: rotate(-40deg);
-    -o-transform: rotate(-40deg);
-    -ms-transform: rotate(-40deg);
-    transform: rotate(-40deg);*/
-}
-
-#titletext div:nth-child(7) {
-	background-image: url(/images/Carrot.png);
-	top: -40px;
-    left: 700px;
-    -webkit-transform: rotate(150deg);
-    -moz-transform: rotate(150deg);
-    -o-transform: rotate(150deg);
-    -ms-transform: rotate(150deg);
-    transform: rotate(150deg);
-}
-
-
 /* Footer content */
 
 
 .Footer-content {
-	height: 65px;
     background-color: #ffec91;
     border-top: 5px solid #fffde2;
     text-align: center;
@@ -239,7 +155,7 @@ h3.ui.header {
 .indexfooterdiv {
     display: inline-block;
     width: 250px;
-    height: 100%;
+    margin-bottom: 15px;
 }
 
 .indexfooterdiv .ui.button {
@@ -257,15 +173,54 @@ h3.ui.header {
 	background-color: #ffb254;
 }
 
-.indexfooterdiv:nth-child(1) {
-	text-align: right;
-}
-
-.indexfooterdiv:nth-child(3) {
-	text-align: left;
-}
-
 /*Results page*/
+
+#resultsmainlogo {
+	padding-top: 200px;
+	font-family: Starborn;
+	font-size: 40px;
+    text-shadow: 3px 3px 1px white;
+}
+
+#numberfoundheader {
+	color: #ff5a5a;
+	margin-top: 0px;
+    font-size: 20px;
+    font-family: To-japan;
+    text-align: center;
+    text-shadow: 2px 2px 1px white;
+}
+
+#numresults {
+    /*color: #f64545;*/
+}
+
+.ui.accordion {
+    background: white;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    border: 4px solid #fffde2;
+    overflow: hidden;
+    background-color: #fff2c4;
+    font-family: Techna;
+}
+
+.ui.accordion:not(.styled) .title ~ .content:not(.ui), .ui.accordion:not(.styled) .accordion .title ~ .content:not(.ui) {
+	padding: 20px;
+	border-top: 2px solid #ff9930b0;
+	border-bottom: 2px solid #ff9930b0;
+}
+
+.ui.accordion .title:not(.ui) {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: To-japan;
+    text-align: left;
+    font-size: 19px;
+    background-image: url(/images/tile02.png);
+    background-size: 10px;
+}
 
 .recipename {
 	margin-bottom: 3px;
@@ -274,7 +229,11 @@ h3.ui.header {
 
 .recipedescription {
 	margin-top: 0px;
-	color: grey;
+    color: #545454;
+    font-family: Techna;
+    font-weight: normal;
+    margin-bottom: 24px;
+    text-align: left;
 }
 
 .resultsegment {
@@ -304,6 +263,7 @@ h3.ui.header {
 
 .ui.header.contentsheader {
     font-size: 25px;
+    font-family: Techna;
 }
 
 ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
@@ -312,6 +272,14 @@ ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
 
 ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
 	font-size: 15px;
+}
+
+.ui.grid > .row > .column.servesdiv {
+	padding: 0px;
+}
+
+.ui.grid > .row > .column.servesdiv h3{
+	font-family: Techna;
 }
 
 .ui.mini.button.amount {
@@ -336,4 +304,63 @@ ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
 
 .ingredientlistcolumn {
 	padding-left: 1rem;
+}
+
+.ui.comments {
+    margin: 0 auto;
+    text-align: left;
+}
+
+#noresultsdiv {
+    background-image: url(/images/tile02.png);
+    background-size: 10px;
+}
+
+#noresultsdiv h1 {
+    font-family: To-japan;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+#noresultsdiv a {
+	font-family: To-japan;
+}
+
+/*
+				Mobile			Tablet			Small Monitor		Large Monitor
+Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
+*/
+
+@media screen and (max-width: 991px) {
+	#searchfield, #submitbutton {
+		font-size: 1.2vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#searchfield, #submitbutton {
+	    font-size: 4vw;
+	    margin: 0 auto;
+	    border-radius: 20px;
+	    display: block;
+	}
+
+	#mainsearchinput {
+	    margin-top: 10px;
+	    width: 80%;
+	    margin-bottom: 10px;		
+	}
+
+	#results {
+		width: 80%;
+		left: 10%;
+	}
+
+	#tagslist {
+		width: 80%;
+	}
+
+	.tagbutton.ui.button {
+		font-size: 10px;
+	}
 }

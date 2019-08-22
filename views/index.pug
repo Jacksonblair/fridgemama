@@ -3,18 +3,10 @@ include header
 div(class="Site-content")
 	div(class="ui grid")
 		div(class="row")
-			div(class="three wide column")
-			div(class="ten wide column" id="maincolumn")
-				h1(class="ui center aligned header" id="mainlogo") 
-					div(id="titletext") FRiDGEMAMA
-						div(class="indextitleicon")
-						div(class="indextitleicon")
-						div(class="indextitleicon")
-						div(class="indextitleicon")
-						div(class="indextitleicon")
-						div(class="indextitleicon")
-						div(class="indextitleicon")
-						div(class="indextitleicon")
+			div(class="one wide mobile two wide tablet three wide computer column")
+			div(class="sixteen wide mobile twelve wide tablet ten wide computer column" id="maincolumn")
+				img(src="/images/logo.png" id="mainlogo")
+
 
 				div(id="searchcontainer")
 					div(class="ui huge input" id="mainsearchinput")
@@ -27,7 +19,8 @@ div(class="Site-content")
 
 					div(id="resultscontainer")
 						div(class="ui basic segment" id="tagslist")
-		div(class="three wide column")
+			div(class="one wide mobile two wide tablet three wide computer column")
+
 
 include footer
 script(src="/javascripts/ingredient_search.js")

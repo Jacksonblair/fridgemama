@@ -1,3 +1,6 @@
+$('.ui.accordion')
+  .accordion()
+;
 
 function incrementServe(recipe) {
 	changeQuantity(recipe, 1);

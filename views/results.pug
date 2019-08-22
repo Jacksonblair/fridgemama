@@ -1,26 +1,31 @@
 include header
 
-div(class="ui grid")
-	div(class="row")
-		div(class="three wide column")
-		div(class="ten wide column" id="maincolumn")
-			h2(class="ui left aligned header")
-				| Your results:
+div(class="Site-content")
+	div(class="ui grid")
+		div(class="row")
+			div(class="three wide column")
+			div(class="ten wide column" id="maincolumn")
+				h1(id="resultsmainlogo") FRiDGEMAMA FOUND . . .
+				h2(class="ui left aligned header" id="numberfoundheader")
+					span(id="numresults")= results.length
 
-			div
-				each recipe in results
-					div(class="ui left aligned segment resultsegment")
-						h2(class="recipename")= recipe.name
-						h4(class="recipedescription")= recipe.description
-						include gallery
-						div(class="ui segment")
+					|  results that contain those ingredients!
+
+				.ui.accordion
+					each recipe in results
+						.title
+							i.dropdown.icon
+							= recipe.name
+						.content
+							h4(class="recipedescription")= recipe.description
+							include gallery
 							div(class="ui stackable grid")
 								div(class="six wide left aligned column resultcontentleft")
 									div(class="ui grid")
 										div(class="row")
 											div(class="eight wide floated stackable column")
 												h3(class="ui header contentsheader") Ingredients:
-											div(class="eight wide right aligned stackable column")
+											div(class="eight wide right aligned stackable column servesdiv")
 												h3(class="ui header")
 													span Serves 
 													span(class="recipeserves" + recipe.name) 1 
@@ -57,9 +62,12 @@ div(class="ui grid")
 											strong Step 4:
 											div(class="ui list")
 												div(class="item") Eat the stuff
-						include comments
-				else
-					p There are no values
+							include comments
+					else
+						div(class="ui segment" id="noresultsdiv") 
+							h1(class="ui header") Sorry :(
+							a(href="/") Go back
+
 
 include footer
 script(src="/javascripts/results.js")

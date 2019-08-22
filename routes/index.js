@@ -23,7 +23,7 @@ router.post('/results', async (req, res, next) => {
 	results = [
 		{
 			name: "Burger", 
-			description: "A tasty burger",
+			description: "A tasty burger that will fuck your tastebuds up good. This burger will make you believe in god. This burger will ruin other burgers for you. Guaranteed life changing meal.",
 			method: "Cook me and don't burn me bitch.",
 			ingredients: [
 				{ 
@@ -45,7 +45,6 @@ router.post('/results', async (req, res, next) => {
 				increment: 3
 				},
 			]
-			
 		},
 		{	name: "Souffle", 
 			description: "A tasty souffle",
@@ -59,6 +58,8 @@ router.post('/results', async (req, res, next) => {
 			]
 		}
 	];
+
+	results = [];
 	res.render('results', { results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware
