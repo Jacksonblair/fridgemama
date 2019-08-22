@@ -337,7 +337,7 @@ Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 	}
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 480px) {
 	#searchfield, #submitbutton {
 	    font-size: 4vw;
 	    margin: 0 auto;
