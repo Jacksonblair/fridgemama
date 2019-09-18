@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Starborn';
+    src: url('/fonts/Starborn.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'To-japan';
+    src: url('/fonts/To Japan.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Timoteo';
+    src: url('/fonts/Timoteo.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Swallow Falls';
+    src: url('/fonts/Swallow Falls.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'German Beauty';
+    src: url('/fonts/German Beauty.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Techna';
+    src: url('/fonts/TechnaSans-Regular.otf') format('opentype');
+}

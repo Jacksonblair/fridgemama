@@ -1,10 +1,10 @@
-var mainContainer = document.getElementById("maincontainer");
-var mainSearchInput = document.getElementById("mainsearchinput");
-var tagInput = document.getElementById("taginput");
-var tagsList = document.getElementById("tagslist");
+var mainSearchInput = document.getElementById("main-search-input");
+var tagInput = document.getElementById("tag-input");
+var tagInputArray = []; // store value to parse to tagInput field
+var tagsList = document.getElementById("tags-list");
 var resultsDiv = document.getElementById("results");
 var matchArray = [];
-var search = document.getElementById("searchfield");
+var search = document.getElementById("search-field");
 var resultDivs = [];
 
 var terms = [
@@ -15,6 +15,7 @@ var terms = [
 search.onkeyup = function() {
     var value = search.value;
     var matches = fuzzysort.go(value, terms, options=null);
+    matches = matches.splice(0, 5);
 
     // empty array of element and remove childs from container
     matchArray.forEach((element) => {
@@ -28,7 +29,6 @@ search.onkeyup = function() {
     }
 
     // console.log(matches);
-
 }
 
 function clickedResult(element) {
@@ -38,14 +38,21 @@ function clickedResult(element) {
     if (tagInput.value) { // add comma if term is not first
         tagInput.value += ","
     }
-    tagInput.value += element.innerHTML;
-    console.log("Adding to tagInput.html: " + element.innerHTML)
+
+    // add to array of clicked search terms
+    tagInputArray.push(element.innerHTML);
+
+    // format array and push into input field
+    tagInput.value = tagInputArray.join(',');
+
     console.log(tagInput.value);
+    console.log(tagInputArray);
 
     // add 'tag' to VISIBLE list of tags
     var tag = document.createElement('div');
     tagsList.appendChild(tag);
     tag.setAttribute("class", "tagbutton ui blue button");
+    tag.setAttribute("onclick", "removeTag(this)");
     tag.style.fontFamily = "To-japan"
     tag.style.fontWeight = "normal"
     tag.style.margin = "5px"
@@ -57,7 +64,8 @@ function clickedResult(element) {
 }
 
 function removeResult(element) {
-    matchArray[element].splice(element);
+    tagsList.splice(tagsList.indexOf(element), 1);
+    tagsList.removeChild(element);
 }
 
 function createSearchItem(item) {
@@ -71,12 +79,21 @@ function createSearchItem(item) {
     div.style.fontFamily = "To-japan";
 }
 
+
+// remove tag from tagslist when clicked
+function removeTag(tag) {
+    tagInputArray.splice(tagInputArray.indexOf(tag.innerHTML), 1);
+    tagsList.removeChild(tag);
+
+}
+
+
 // search results visibility
 $(document).click(function() {
   $('#results').hide();
 });
 
-$('#mainsearchinput').click(function() { 
+$('#main-search-input').click(function() { 
   $('#results').show();
   return false;
 });

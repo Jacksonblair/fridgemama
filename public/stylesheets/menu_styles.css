@@ -1,0 +1,6 @@
+#menu-content {
+    background-image: url(/images/tile02.png);
+/*    background-size: 0.7%;*/
+    border-bottom: 5px solid #fffde2;
+    text-align: center;
+}

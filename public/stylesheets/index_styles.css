@@ -1,0 +1,138 @@
+
+/* Index page*/
+
+#logo-row {
+    /*height: 200px;*/
+}
+
+#search-row {
+    /*height: 80px;*/
+    padding-bottom: 5%;
+}
+
+#main-logo {
+	margin: 0 auto;
+    /*margin-top: 10%;*/
+    background-repeat: no-repeat;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.ingredientMatch {
+	width: 200px;
+	height: 50px;
+	border: 2px solid black;
+	display: block;
+}
+
+#search-container {
+	position: relative;
+	z-index: 2;
+    text-align: center;
+}
+
+#search-field {
+	border-radius: 20px 0px 0px 20px;
+	font-family: 'To-japan';
+    font-size: 1vw;
+}
+
+#submit-button {
+    margin-left: 0px;
+    border-radius: 0px 20px 20px 0px;
+    font-family: 'To-japan';
+    font-size: 1vw;
+    font-weight: 100;
+}
+
+#search-form {
+	display: inline;
+}
+
+#results-container {
+	position: absolute;
+	z-index: 1;
+    margin-top: 16px;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+#main-search-input {
+	margin-top: 10px;
+	width: 30%;
+}
+
+#results {
+	width: 30%;
+    margin: 0 auto;
+	position: absolute;
+    top: 65px;
+    left: 35%;
+    background: white;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+#tags-list {
+	width: 50%;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+#tag-input {
+	display: none;
+}
+
+.tagbutton.ui.button {
+    font-size: 1vw;
+    padding: 5px 10px 5px 10px;
+    transition: 0.3s all;
+}
+
+.tagbutton.ui.button:hover {
+    background: red;
+}
+
+
+@media only screen and (max-width: 992px) {
+    #search-field, #submit-button {
+        font-size: 1.4vw;
+    }
+}
+
+/*MOBILE STYLES*/
+@media only screen and (max-width: 480px) {
+
+    #results-main-logo {
+        font-size: 30px;
+    }
+
+    #search-field, #submit-button {
+        font-size: 4vw;
+        margin: 0 auto;
+        border-radius: 20px;
+        display: block;
+    }
+
+    #main-search-input {
+        margin-top: 10px;
+        width: 80%;
+        margin-bottom: 10px;        
+    }
+
+    #results {
+        width: 80%;
+        left: 10%;
+    }
+
+    #tagslist {
+        width: 80%;
+    }
+
+    .tag-button.ui.button {
+        font-size: 10px;
+    }
+
+}

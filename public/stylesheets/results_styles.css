@@ -1,0 +1,153 @@
+
+/*Results page*/
+
+#resultsmainlogo {
+	font-family: Starborn;
+	font-size: 40px;
+    text-shadow: 3px 3px 1px white;
+}
+
+#numberfoundheader {
+	color: #ff5a5a;
+	margin-top: 0px;
+    font-size: 20px;
+    font-family: To-japan;
+    text-align: center;
+    text-shadow: 2px 2px 1px white;
+}
+
+#numresults {
+    /*color: #f64545;*/
+}
+
+.ui.accordion {
+    background: white;
+    border-radius: 25px;
+    border: 4px solid #fffde2;
+    overflow: hidden;
+    background-color: #fff2c4;
+    font-family: Techna;
+}
+
+.ui.accordion:not(.styled) .title ~ .content:not(.ui), .ui.accordion:not(.styled) .accordion .title ~ .content:not(.ui) {
+	padding: 20px;
+	border-top: 2px solid #ff9930b0;
+	border-bottom: 2px solid #ff9930b0;
+}
+
+.ui.accordion .title:not(.ui) {
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: To-japan;
+    text-align: left;
+    font-size: 19px;
+    background-image: url(/images/tile02.png);
+    background-size: 10px;
+}
+
+.row.servesrow {
+	margin-bottom: 10px;
+}
+
+.recipename {
+	margin-bottom: 3px;
+	font-size: 40px;
+}
+
+.recipedescription {
+	margin-top: 0px;
+    color: #545454;
+    font-family: Techna;
+    font-weight: normal;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.resultsegment {
+
+}
+
+.ui.segment.resultsegment {
+    border-top: 10px solid rgba(34, 36, 38, 0.15);
+    padding-top: 5px;
+    background: #f6f6f6;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+
+.ingredientquantity {
+    display: inline;
+    margin-right: 10px;
+}
+
+.ingredientunit {
+    display: inline;
+}
+
+.ingredientname {
+	display: inline;
+}
+
+.ui.header.contentsheader {
+    font-size: 25px;
+    font-family: Techna;
+}
+
+ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
+	font-size: 15px;
+}
+
+ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
+	font-size: 15px;
+}
+
+.ui.grid > .row > .column.servesdiv {
+	padding: 0px;
+}
+
+.ui.grid > .row > .column.servesdiv h3{
+	font-family: Techna;
+}
+
+.ui.mini.button.amount {
+    font-size: 20px;
+    padding: 3px;
+    width: 30px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.resultcontentright {
+	border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+.ui.image.galleryimage {
+	border-radius: 20px;
+}
+
+.ingredientlistcolumn {
+	padding-left: 1rem;
+}
+
+.ui.comments {
+    text-align: left;
+}
+
+#noresultsdiv {
+    background-image: url(/images/tile02.png);
+    background-size: 10px;
+}
+
+#noresultsdiv h1 {
+    font-family: To-japan;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+#indexlink {
+    font-family: To-japan;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+}

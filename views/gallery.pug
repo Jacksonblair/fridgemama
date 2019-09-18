@@ -1,9 +1,6 @@
-div(class="ui stackable grid imagegallery")
-	div(class="four wide column")
-		img(class="ui image galleryimage" src="/images/image.png")
-	div(class="computer only four wide column")
-		img(class="ui image galleryimage" src="/images/image.png")
-	div(class="computer only four wide column")
-		img(class="ui image galleryimage" src="/images/image.png")
-	div(class="computer only four wide column")
-		img(class="ui image galleryimage" src="/images/image.png")
+div(class="ui stackable four wide computer one wide mobile grid imagegallery")
+	each url in recipe.images
+		div(class="four wide column")
+			img(class="ui image galleryimage" src=url)
+	else
+		h1(class="ui header") NO IMAGES :(

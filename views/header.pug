@@ -6,6 +6,12 @@ html
 		meta(name="MobileOptimized" content="320")
 		meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no")
 		link(rel="stylesheet", href='/stylesheets/semantic.css', type="text/css")
+		link(rel="stylesheet", href='/stylesheets/fonts.css', type="text/css")
 		link(rel="stylesheet", href='/stylesheets/styles.css', type="text/css")
+		link(rel="stylesheet", href='/stylesheets/index_styles.css', type="text/css")
+		link(rel="stylesheet", href='/stylesheets/results_styles.css', type="text/css")
+		link(rel="stylesheet", href='/stylesheets/footer_styles.css', type="text/css")
+		link(rel="stylesheet", href='/stylesheets/menu_styles.css', type="text/css")
 
-	body(class="Site")
+	body#content
+		include menu

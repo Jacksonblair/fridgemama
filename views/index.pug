@@ -1,26 +1,25 @@
 include header
 
-div(class="Site-content")
-	div(class="ui grid")
-		div(class="row")
-			div(class="one wide mobile two wide tablet three wide computer column")
-			div(class="sixteen wide mobile twelve wide tablet ten wide computer column" id="maincolumn")
-				img(src="/images/logo.png" id="mainlogo")
-
-
-				div(id="searchcontainer")
-					div(class="ui huge input" id="mainsearchinput")
-						input( type="text" id="searchfield" placeholder="Enter an ingredient...")
-					form(action="/results" method="post" id="searchform")
-						div(class="ui input")
-							input(type="text" value="" name="tags" id="taginput")
-						input(class="ui huge yellow button" type="submit" value="Find a recipe!" id="submitbutton")
-					div(class="ui middle aligned selection list" id="results")
-
-					div(id="resultscontainer")
-						div(class="ui basic segment" id="tagslist")
-			div(class="one wide mobile two wide tablet three wide computer column")
-
+#main-content.ui.grid
+	#main-row-body.row
+		.three.wide.computer.only.column
+		.one.wide.tablet.only.column
+		.ten.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.middle.aligned.column
+			#logo-row.row
+				img#main-logo(src="/images/logo.png")
+			#search-row.row
+				#search-container
+					#main-search-input.ui.huge.input
+						input#search-field(type="text" placeholder="Enter an ingredient...")
+					form#search-form(action="/results" method="post")
+						.ui.input
+							input#tag-input(type="text" value="" name="tags")
+						input#submit-button.ui.huge.yellow.button(type="submit" value="Find a recipe!")
+					#results.ui.middle.aligned.selection.list
+					#results-container
+						#tags-list.ui.basic.segment
+		.one.wide.tablet.only.column
+		.three.wide.computer.only.column
 
 include footer
 script(src="/javascripts/ingredient_search.js")
