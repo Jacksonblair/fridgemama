@@ -1,12 +1,14 @@
 include header
 
-#main-content.ui.grid
+#main-content.ui.stackable.grid
 	#main-row-body.row
-		.three.wide.computer.only.column
+		.two.wide.computer.only.column
 		.one.wide.tablet.only.column
-		.ten.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.middle.aligned.column
-			#logo-row.row
-				img#main-logo(src="/images/logo.png")
+		.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.middle.aligned.column
+			#blurb-row.row
+				h3 FRIDGEMAMA HELPS YOU EMPTY YOUR FRIDGE.
+					br
+					| JUST ENTER SOME INGREDIENTS AND FIND A RECIPE!
 			#search-row.row
 				#search-container
 					#main-search-input.ui.huge.input
@@ -19,7 +21,7 @@ include header
 					#results-container
 						#tags-list.ui.basic.segment
 		.one.wide.tablet.only.column
-		.three.wide.computer.only.column
+		.two.wide.computer.only.column
 
 include footer
 script(src="/javascripts/ingredient_search.js")

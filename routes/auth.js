@@ -20,7 +20,7 @@ router.get('/signup', (req, res) => {
 
 router.get('/logout', (req, res, next) => {
 	req.session.reset();
-	res.redirect('./login');
+	res.redirect('/');
 });
 
 router.post('/login', (req, res) => {

@@ -1,6 +1,68 @@
-#menu-content {
+#menu-logo {
+	font-family: To-japan;
+	font-size: 1.5rem;
+    color: white;
+    /* text-shadow: 1px 1px 1px #e09a5f; */
+    margin: 0 auto;
+    width: 300px;
+    background: orange;
+    height: 100%;
+    font-weight: normal;
+}
+
+#main-row-menu {
     background-image: url(/images/tile02.png);
 /*    background-size: 0.7%;*/
     border-bottom: 5px solid #fffde2;
     text-align: center;
+    padding-bottom: 0px;
 }
+
+#menu-menu-button {
+	padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: 32px;
+}
+
+#login-button:hover, #logout-button:hover, #dashboard-button:hover, #menu-menu-button:hover {
+	background-color: #ffb356;
+}
+
+#login-button, #logout-button, #dashboard-button, #menu-menu-button {
+    border-radius: 0px;
+    font-size: 12px;
+    background-color: #ff9d24;
+    color: white;
+    font-family: To-japan;
+    font-weight: normal;
+    /*text-shadow: 1px 1px 1px #9a7625;*/
+    /*box-shadow: 4px 4px 1px white;*/
+}
+
+
+/*MOBILE STYLES*/
+@media only screen and (max-width: 768px) {
+
+	#left-menu-column {
+		display: none;
+	}
+
+	#middle-menu-column {
+		padding-bottom: 0.2em !important;
+	}
+
+	#right-menu-column {
+		padding: 0em 1em !important;
+	}
+
+	#main-row-menu {
+		background-color: #ff9d24;
+		background-image: none;
+	}
+
+}
+
+
+
+

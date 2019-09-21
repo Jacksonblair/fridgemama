@@ -2,18 +2,20 @@
 /*Results page*/
 
 #resultsmainlogo {
-	font-family: Starborn;
-	font-size: 40px;
-    text-shadow: 3px 3px 1px white;
+	font-family: To-japan;
+	font-size: 1.7rem;
+    color: white;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #97c8ff;
+    margin-bottom: 8px;
 }
 
 #numberfoundheader {
 	color: #ff5a5a;
 	margin-top: 0px;
-    font-size: 20px;
+    font-size: 1.4rem;
     font-family: To-japan;
     text-align: center;
-    text-shadow: 2px 2px 1px white;
 }
 
 #numresults {
@@ -22,7 +24,7 @@
 
 .ui.accordion {
     background: white;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 4px solid #fffde2;
     overflow: hidden;
     background-color: #fff2c4;
@@ -41,9 +43,24 @@
     padding-bottom: 10px;
     font-family: To-japan;
     text-align: left;
-    font-size: 19px;
-    background-image: url(/images/tile02.png);
-    background-size: 10px;
+    font-size: 1.4rem;
+    background-color: #ffcd75;
+}
+
+.recipe.name {
+    padding-top: 5px;
+}
+
+.ui.tiny.basic.button.cooking-difficulty {
+    font-family: To-japan;
+}
+
+.ui.tiny.basic.button.cooking-time {
+    font-family: To-japan;
+}
+
+a.back-link {
+    font-size: 1.3rem;
 }
 
 .row.servesrow {
@@ -62,6 +79,10 @@
     font-weight: normal;
     margin-bottom: 24px;
     text-align: left;
+}
+
+.ui.stackable.left.aligned.grid.title.grid {
+    margin-right: 0px;
 }
 
 .resultsegment {

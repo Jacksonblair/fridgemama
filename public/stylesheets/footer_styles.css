@@ -2,60 +2,38 @@
 
 #footer-content {
     background-image: url(/images/tile02.png);
-    background-size: 0.7%;
     border-top: 5px solid #fffde2;
     text-align: center;
 }
 
-.ui.header.footer:hover {
-	background: white;
-}
-
-.footer-div {
-    display: inline;
-    margin: 10px 10px 0px 0px;
-}
-
-.footer-div .ui.button {
-    border-radius: 7px;
-    font-size: 12px;
-    background-color: #ff9d24;
-    color: white;
-    font-family: To-japan;
-    font-weight: normal;
-    text-shadow: 1px 1px 1px #9a7625;
-	box-shadow: 4px 4px 1px white;
-}
-
-.footer-div .ui.button:hover {
-	background-color: #ffb254;
-}
-
 #main-row-footer {
-    margin-bottom: 15px;
-    margin-top: 10px;
-    padding: 0px;
+    margin: 0;
+    padding: 0.3rem;
+    padding-bottom: 0.trem;
+}
+
+#footer-text {
+    font-family: sans-serif;
+    font-size: 1rem;
+    /*text-shadow: 1px 1px 1px #d9aa47;*/
+    color: #915c31;
+    letter-spacing: -0.054rem;
 }
 
 /*TABLET STYLES*/
 @media only screen and (max-width: 992px) {
-    .footer-div .ui.button {
-        font-size: 1.5vw;
-        border-radius: 5px;
-    }
+
 }
 
 /*MOBILE STYLES*/
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
 
     .footer-div {
         margin: 0px 5px;
     }
 
-    .footer-div .ui.button {
-        font-size: 2.6vw;
-        padding: 7px 5px;
-        border-radius: 3px;
+    #footer-text {
+
     }
 
 }

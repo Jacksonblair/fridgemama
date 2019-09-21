@@ -1,23 +1,21 @@
 
 /* Index page*/
+#blurb-row {
+    text-align: center;
+}
 
-#logo-row {
+#blurb-row h3 {
     /*height: 200px;*/
+    font-family: To-japan;
+    font-size: 1.7rem;
+    color: white;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px #97c8ff;
 }
 
 #search-row {
     /*height: 80px;*/
     padding-bottom: 5%;
-}
-
-#main-logo {
-	margin: 0 auto;
-    /*margin-top: 10%;*/
-    background-repeat: no-repeat;
-    display: block;
-    max-height: 100%;
-    max-width: 100%;
-    overflow: hidden;
 }
 
 .ingredientMatch {
@@ -36,14 +34,14 @@
 #search-field {
 	border-radius: 20px 0px 0px 20px;
 	font-family: 'To-japan';
-    font-size: 1vw;
+    font-size: 1rem;
 }
 
 #submit-button {
     margin-left: 0px;
     border-radius: 0px 20px 20px 0px;
     font-family: 'To-japan';
-    font-size: 1vw;
+    font-size: 1rem;
     font-weight: 100;
 }
 
@@ -61,7 +59,6 @@
 
 #main-search-input {
 	margin-top: 10px;
-	width: 30%;
 }
 
 #results {
@@ -96,43 +93,37 @@
 }
 
 
-@media only screen and (max-width: 992px) {
-    #search-field, #submit-button {
-        font-size: 1.4vw;
+
+
+/*TABLET STYLES*/
+@media only screen and (max-width: 991px) {
+    #blurb-row h3 {
+        font-size: 1.5rem;
     }
+
+
+    #search-field {
+        font-size: 0.8rem;
+    }
+
+    #submit-button {
+        font-size: 0.8rem;
+    }
+
+
 }
 
 /*MOBILE STYLES*/
-@media only screen and (max-width: 480px) {
-
-    #results-main-logo {
-        font-size: 30px;
+@media only screen and (max-width: 768px) {
+    #blurb-row h3 {
+        font-size: 1.2rem;
     }
 
     #search-field, #submit-button {
-        font-size: 4vw;
-        margin: 0 auto;
-        border-radius: 20px;
-        display: block;
+        border-radius: 15px;
     }
 
-    #main-search-input {
-        margin-top: 10px;
-        width: 80%;
-        margin-bottom: 10px;        
+    #search-field {
+        margin-bottom: 5px;
     }
-
-    #results {
-        width: 80%;
-        left: 10%;
-    }
-
-    #tagslist {
-        width: 80%;
-    }
-
-    .tag-button.ui.button {
-        font-size: 10px;
-    }
-
 }

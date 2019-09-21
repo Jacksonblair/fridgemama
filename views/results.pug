@@ -14,8 +14,15 @@ include header
 			.ui.accordion
 				each recipe in results
 					.title
-						i.dropdown.icon
-						= recipe.name
+						.ui.stackable.left.aligned.grid.title.grid
+							.row
+								.eight.wide.column
+									.recipe.name
+										i.dropdown.icon
+										= recipe.name
+								.eight.wide.right.aligned.column
+									.ui.tiny.basic.button.cooking-time 30 Mins
+									.ui.tiny.basic.button.cooking-difficulty Easy
 					.content
 						div(class="ui stackable grid")
 							div(class="row")
@@ -69,7 +76,7 @@ include header
 					div(class="ui segment" id="noresultsdiv") 
 						h1(class="ui header") Sorry :(
 			div(id="indexlink")
-				a(href="/") Go back
+				a.back-link(href="/") Go back
 		.one.wide.tablet.only.column
 		.three.wide.computer.only.column
 

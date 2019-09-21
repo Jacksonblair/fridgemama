@@ -12,10 +12,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/dashboard', loginRequired, (req, res) => {
-	res.render('dashboard');
+	res.json(req.user);
 });
 
 router.get('/results', function(req, res, next) {
+	res.render('dashboard');
 	res.redirect('/');
 });
 
@@ -35,6 +36,36 @@ router.get('/favicon.ico', (req, res) => {
 });
 
 var results = [
+		{
+			name: "Burger", 
+			description: "A tasty burger that will fuck your tastebuds up good. This burger will make you believe in god. This burger will ruin other burgers for you. Guaranteed life changing meal.",
+			method: "Cook me and don't burn me bitch.",
+			ingredients: [
+				{ 
+				name: "Bread",
+				quantity: 2,
+				unit: "Slice",
+				increment: 2
+				},
+				{ 
+				name: "Beef",
+				quantity: 1.5,
+				unit: "Cup",
+				increment: 1.5
+				},				
+				{ 
+				name: "Lettuce",
+				quantity: 3,
+				unit: "Leaf",
+				increment: 3
+				},
+			],
+			images: [
+				'/images/image.png',
+				'/images/image.png',
+				'/images/image.png'
+			]
+		},
 		{
 			name: "Burger", 
 			description: "A tasty burger that will fuck your tastebuds up good. This burger will make you believe in god. This burger will ruin other burgers for you. Guaranteed life changing meal.",

@@ -1,7 +1,24 @@
-#menu-content.ui.grid
-	#main-row-header.row
-		.three.wide.column
-		.ten.wide.center.aligned.column
-			p header
-		.three.wide.column
-			p profile
+#menu-content.ui.stackable.grid
+	#main-row-menu.row
+		#left-menu-column.six.wide.computer.one.wide.tablet.column
+		#middle-menu-column.four.wide.computer.eight.wide.tablet.eight.wide.mobile.center.aligned.column
+			a(href="/")
+				h3#menu-logo FRIDGEMAMA.COM
+		#right-menu-column.six.wide.computer.seven.wide.tablet.eight.wide.mobile.column
+			if user
+				a(href="/auth/logout")
+					button#logout-button.ui.button.menu-button Sign out 
+						i.fas.fa-sign-out-alt
+				a(href="/dashboard")
+					button#dashboard-button.ui.button.menu-button Profile 
+						i.fas.fa-user
+			else
+				a(href="/auth/login")
+					button#login-button.ui.button.menu-button Sign in 
+						i.fas.fa-sign-in-alt
+			#menu-menu-button.ui.dropdown
+				.text Menu 
+					i.fas.fa-bars
+				.menu
+					.item SUBMIT A RECIPE
+					.item INSTAGRAM

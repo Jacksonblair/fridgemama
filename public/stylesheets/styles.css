@@ -5,12 +5,12 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
-    background-image: url(/images/tile01.jpg);
-    background-size: 10%;
+    background-image: url(/images/tile02.jpg);
+    background-color:#cbf2ff;
+    background-size: 20%;
 }
 
 #menu-content {
-    height: 50px;
     flex-shrink: 0;
 }
 
@@ -28,3 +28,10 @@
 				Mobile			Tablet			Small Monitor		Large Monitor
 Device Width	below 768px		768px - 991px	992px - 1200px		above 1200px
 */
+
+/*MOBILE STYLES*/
+@media only screen and (max-width: 768px) {
+    #content {
+        background-size: 60%;
+    }
+}

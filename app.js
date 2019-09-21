@@ -39,10 +39,12 @@ app.use((req, res, next) => {
 			return next();
 
 		// clear hashed password
-		user.password = undefined;
+		user.rows[0].password = undefined;
 
-		req.user = user;
-		res.locals.user = user;
+		req.user = user.rows[0];
+		res.locals.user = user.rows[0];
+		console.log(res.locals.user);
+
 
 		next();
 	})
