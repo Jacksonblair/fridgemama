@@ -11,18 +11,20 @@ include header
 
 				|  results that contain those ingredients!
 
-			.ui.accordion
-				each recipe in results
+			each recipe in results
+				.ui.accordion
 					.title
 						.ui.stackable.left.aligned.grid.title.grid
-							.row
+							.row.results
 								.eight.wide.column
 									.recipe.name
-										i.dropdown.icon
+										i.fas.fa-bars
+										| &nbsp&nbsp
 										= recipe.name
 								.eight.wide.right.aligned.column
-									.ui.tiny.basic.button.cooking-time 30 Mins
-									.ui.tiny.basic.button.cooking-difficulty Easy
+									.ui.disabled.tiny.orange.button.results.cooking-time 30 Mins
+									.ui.disabled.tiny.orange.button.results.cooking-difficulty Easy
+									.ui.tiny.basic.button.results.new-tab-button Open in new tab
 					.content
 						div(class="ui stackable grid")
 							div(class="row")
@@ -72,9 +74,9 @@ include header
 										strong Step 4:
 										div(class="ui list")
 											div(class="item") Eat the stuff
-				else
-					div(class="ui segment" id="noresultsdiv") 
-						h1(class="ui header") Sorry :(
+			else
+				div(class="ui segment" id="noresultsdiv") 
+					h1(class="ui header") Sorry :(
 			div(id="indexlink")
 				a.back-link(href="/") Go back
 		.one.wide.tablet.only.column

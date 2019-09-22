@@ -27,7 +27,19 @@
     font-family: 'Techna';
     src: url('/fonts/TechnaSans-Regular.otf') format('opentype');
 }
+
 @font-face {
     font-family: 'Bebas';
     src: url('/fonts/Bebas-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('/fonts/Lato-Regular.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('/fonts/Lato-Bold.ttf') format('truetype');
 }

@@ -83,16 +83,10 @@
 }
 
 .tagbutton.ui.button {
-    font-size: 1vw;
+    font-size: 1rem;
     padding: 5px 10px 5px 10px;
     transition: 0.3s all;
 }
-
-.tagbutton.ui.button:hover {
-    background: red;
-}
-
-
 
 
 /*TABLET STYLES*/
@@ -110,7 +104,6 @@
         font-size: 0.8rem;
     }
 
-
 }
 
 /*MOBILE STYLES*/
@@ -126,4 +119,13 @@
     #search-field {
         margin-bottom: 5px;
     }
+
+    .tagbutton.ui.button {
+    font-size: 0.6rem;
+    }
+
+    #tags-list {
+        width: 100%;
+    }
+
 }

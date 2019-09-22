@@ -51,12 +51,18 @@ function clickedResult(element) {
     // add 'tag' to VISIBLE list of tags
     var tag = document.createElement('div');
     tagsList.appendChild(tag);
+
     tag.setAttribute("class", "tagbutton ui blue button");
-    tag.setAttribute("onclick", "removeTag(this)");
     tag.style.fontFamily = "To-japan"
     tag.style.fontWeight = "normal"
     tag.style.margin = "5px"
-    tag.innerHTML = element.innerHTML;
+    tag.innerHTML = element.innerHTML + " ";
+
+    // Add CLOSE icon to tag element
+    var removeIcon = document.createElement('i');
+    removeIcon.className = "fas fa-times" 
+    removeIcon.setAttribute("onclick", "removeTag(this)");
+    tag.appendChild(removeIcon);
 
     // remove result from array and from displayed matches
     resultsDiv.removeChild(element);
@@ -82,9 +88,8 @@ function createSearchItem(item) {
 
 // remove tag from tagslist when clicked
 function removeTag(tag) {
-    tagInputArray.splice(tagInputArray.indexOf(tag.innerHTML), 1);
-    tagsList.removeChild(tag);
-
+    tagInputArray.splice(tagInputArray.indexOf(tag.parentNode.innerHTML), 1);
+    tagsList.removeChild(tag.parentNode);
 }
 
 
