@@ -67,27 +67,27 @@ var results = [
 			]
 		},
 		{
-			name: "Burger", 
+			name: "Spaghetti", 
 			description: "A tasty burger that will fuck your tastebuds up good. This burger will make you believe in god. This burger will ruin other burgers for you. Guaranteed life changing meal.",
 			method: "Cook me and don't burn me bitch.",
 			ingredients: [
 				{ 
-				name: "Bread",
-				quantity: 2,
-				unit: "Slice",
-				increment: 2
+				name: "Spaghetti",
+				quantity: 1,
+				unit: "Handful",
+				increment: 1
 				},
 				{ 
-				name: "Beef",
+				name: "Beef Mince",
 				quantity: 1.5,
 				unit: "Cup",
 				increment: 1.5
 				},				
 				{ 
-				name: "Lettuce",
-				quantity: 3,
-				unit: "Leaf",
-				increment: 3
+				name: "Tomato Sauce",
+				quantity: 2,
+				unit: "Cups",
+				increment: 2
 				},
 			],
 			images: [

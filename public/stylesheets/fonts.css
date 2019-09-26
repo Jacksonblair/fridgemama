@@ -38,8 +38,22 @@
     src: url('/fonts/Lato-Regular.ttf') format('truetype');
 }
 
-
 @font-face {
     font-family: 'Lato-Bold';
     src: url('/fonts/Lato-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url('/fonts/Montserrat-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Palanquin-Bold';
+    src: url('/fonts/Palanquin-Bold.ttf') format('truetype');
 }

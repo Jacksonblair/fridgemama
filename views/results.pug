@@ -1,86 +1,100 @@
 include header
 
 #main-content.ui.center.aligned.grid
-	#main-row-body.row
+	#main-body-row.row
 		.three.wide.computer.only.column
 		.one.wide.tablet.only.column
-		.ten.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.middle.aligned.column
-			h1(id="resultsmainlogo") FRiDGEMAMA FOUND . . .
-			h2(class="ui left aligned header" id="numberfoundheader")
-				span(id="numresults")= results.length
+		.ten.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.column
+			h1(id="results-main-logo") FRiDGEMAMA FOUND . . .
+			h2(class="ui left aligned header" id="number-found-header")
+				span(id="num-results")= results.length
 
 				|  results that contain those ingredients!
 
-			each recipe in results
-				.ui.accordion
-					.title
-						.ui.stackable.left.aligned.grid.title.grid
-							.row.results
-								.eight.wide.column
-									.recipe.name
-										i.fas.fa-bars
-										| &nbsp&nbsp
-										= recipe.name
-								.eight.wide.right.aligned.column
-									.ui.disabled.tiny.orange.button.results.cooking-time 30 Mins
-									.ui.disabled.tiny.orange.button.results.cooking-difficulty Easy
-									.ui.tiny.basic.button.results.new-tab-button Open in new tab
-					.content
-						div(class="ui stackable grid")
-							div(class="row")
-								div(class="sixteen wide column")
-									h4(class="recipedescription")= recipe.description
-							div(class="sixteen wide column")
-								div(class="row")
-									h3(class="ui header contentsheader") Gallery
-								div(class="row")
-									include gallery
-							div(class="six wide left aligned column resultcontentleft")
-								div(class="row")
-										h3(class="ui header contentsheader") Ingredients:
-								div(class="row servesrow")
-									h3(class="ui header")
-										span Serves 
-										span(class="recipeserves" + recipe.name) 1 
-										button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)") + 
-										button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)") - 
-								div(class="row")
-									div(class="ui bulleted list")
-										each ingredient in recipe.ingredients
-											div(class="item")
-												span(class="ingredientquantity" + recipe.name)= ingredient.quantity 
-												| 
-												span(class="ingredientunit")= ingredient.unit 
-												|  of  
-												span(class="ingredientname")= ingredient.name 
+			.ui.grid.results-grid
+				each recipe in results
+					.row.result-row
+						.recipe-rating
+							.stars
+								i.fas.fa-star
+								i.fas.fa-star
+								i.fas.fa-star
+								i.fas.fa-star
+						.ui.grid.result-grid
+							.row.summary-row(onClick="expandResult(this)")
+								.two.wide.middle.aligned.column.image-column
+									img.ui.small.centered.image(src="/images/image.png")
+								.fourteen.wide.middle.aligned.column
+									.row.recipe-name-row
+										.column
+											.recipe-name
+												= recipe.name
+											.recipe-time
+												i.fas.fa-clock
+												p
+													|  45 MINS
+									.row.recipe-notes-row
+										.column
+											.recipe-notes
+												each ingredient in recipe.ingredients
+													button.ui.tiny.button.ingredient-button= ingredient.name
+							.row.expanding-row
+
+								.ui.grid
+									.five.column.row.utils
+										button.ui.tiny.button.util-button Like
+										button.ui.tiny.button.util-button Favourite
+										button.ui.tiny.button.util-button Open in new tab
+
+									.row
+										div(class="four wide left aligned column resultcontentleft")
+											div(class="row")
+													h3(class="ui header contentsheader") Ingredients:
+											div(class="row servesrow")
+												h3(class="ui header")
+													span Serves 
+													span(class="recipeserves" + recipe.name) 1 
+													button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)") + 
+													button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)") - 
+											div(class="row")
+												div(class="ui bulleted list")
+													each ingredient in recipe.ingredients
+														div(class="item")
+															span(class="ingredientquantity" + recipe.name)= ingredient.quantity 
+															| 
+															span(class="ingredientunit")= ingredient.unit 
+															|  of  
+															span(class="ingredientname")= ingredient.name 
 
 
-							div(class="ten wide left aligned column resultcontentright")
-								h3(class="ui header contentsheader") Method:
-								div(class="ui list")
-									div(class="item") 
-										strong Step 1:
-										div(class="ui list")
-											div(class="item") Do stuff
-									div(class="item") 
-										strong Step 2:
-										div(class="ui list")
-											div(class="item") Do more stuff
-									div(class="item") 
-										strong Step 3:
-										div(class="ui list")
-											div(class="item") Continue to do stuff
-									div(class="item") 
-										strong Step 4:
-										div(class="ui list")
-											div(class="item") Eat the stuff
-			else
-				div(class="ui segment" id="noresultsdiv") 
-					h1(class="ui header") Sorry :(
-			div(id="indexlink")
-				a.back-link(href="/") Go back
+										div(class="twelve wide left aligned column resultcontentright")
+											h3(class="ui header contentsheader") Method:
+											div(class="ui list")
+												div(class="item") 
+													strong Step 1:
+													div(class="ui list")
+														div(class="item") Do stuff
+												div(class="item") 
+													strong Step 2:
+													div(class="ui list")
+														div(class="item") Do more stuff
+												div(class="item") 
+													strong Step 3:
+													div(class="ui list")
+														div(class="item") Continue to do stuff
+												div(class="item") 
+													strong Step 4:
+													div(class="ui list")
+														div(class="item") Eat the stuff
+
+										include gallery
+				else
+					div(class="ui segment" id="noresultsdiv") 
+						h1(class="ui header") Sorry :(
+					div(id="indexlink")
+						a.back-link(href="/") Go back
 		.one.wide.tablet.only.column
 		.three.wide.computer.only.column
 
-include footer
 script(src="/javascripts/results.js")
+include footer

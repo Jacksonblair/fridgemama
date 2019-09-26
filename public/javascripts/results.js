@@ -1,6 +1,4 @@
-$('.ui.accordion')
-  .accordion()
-;
+console.log("Loaded Javascripts/results.js");
 
 function incrementServe(recipe) {
 	changeQuantity(recipe, 1);
@@ -13,7 +11,6 @@ function decrementServe(recipe) {
 		changeQuantity(recipe, 0);
 	}
 }
-
 
 function changeQuantity(original, shouldIncrement) {
 	var recipe = JSON.parse(original); // parse into object
@@ -35,4 +32,27 @@ function changeQuantity(original, shouldIncrement) {
 
 		element[i].innerHTML = String(newInt); // update divs
 	}
+}
+
+function expandResult(element) {
+	// Hide and show thumbnail
+	// var thumbnail = element.firstChild.style;
+	// thumbnail.display = (thumbnail.display !== "none") ? "none" : "inline";
+
+	// Hide and show information section
+	var target = element.nextSibling.style;
+		if (target.visibility !== "visible") {
+			element.className = "row summary-row-clicked";
+			target.transition = "1s all";
+			target.visibility = "visible";
+			target.opacity = "1";
+			target.height = "auto";	
+			return;
+		}
+
+	element.className = "row summary-row";
+	target.transition = "0s all";
+	target.visibility = "hidden";
+	target.opacity = "0";
+	target.height = "0px";
 }
