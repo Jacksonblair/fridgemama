@@ -18,26 +18,27 @@
 #number-found-header {
 	color: #ff5a5a;
 	margin-top: 0px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-family: To-japan;
     text-align: center;
+    font-weight: normal;
 }
 
 #num-results {
     /*color: #f64545;*/
 }
 
-/* Result contaners */
+/* Result containers */
 
 .ui.grid > .row.result-row {
-    background: #ffffff94;
+    /*background: #ffffff94;*/
     margin-top: 15px;
     padding: 0px;
     border-radius: 5px;
 }
 
 .ui.grid > .row.summary-row {
-    background: transparent;
+    background: #ffffff94;;
     transition: 0.3s all;
     padding: 0px;
 }
@@ -74,17 +75,18 @@
     padding: 0;
     padding-top: 13px;
     padding-left: 15px;
+    background: #ffffff94;
+}
+
+.ui.grid.content-grid{
+    background: #ffffff94;
+}
+
+.ui.grid.image-gallery {
+    background: #1f3137b0;
 }
 
 /* Result styles */
-
-.recipe-rating {
-    position: absolute;
-    right: 0px;
-    padding-top: 10px;
-    padding-right: 10px;
-    font-size: 1.5rem;
-}
 
 .recipe-time p {
     display: inline;
@@ -112,6 +114,16 @@
     text-align: left;
 }
 
+.row.recipe-description-row {
+    margin-top: 15px;
+}
+
+p.recipe-description {
+    font-family: Lato-bolditalic;
+    font-size: 1.2rem;
+    padding: 0px 20px;
+}
+
 /* NOTE BUTTONS */
 
 .recipe-notes {
@@ -133,6 +145,12 @@
 
 /*UTIL BUTTONS*/
 
+.utils {
+    position: absolute;
+    right: 0px;
+    margin-top: 10px;
+}
+
 .ui.button.util-button {
     padding: 8px;
     height: 100%;
@@ -140,28 +158,33 @@
     margin: 0;
     font-family: To-japan;
     font-weight: normal;
-    margin-right: 3px;
+    margin-right: 15px;
     border-radius: 5px;
     box-shadow: 1px 1px 1px #bfbfbf;
 }
 
 
-
-
-
-
-
-
-
-
+/*RECIPE INFORMATION STYLING*/
 
 
 a.back-link {
     font-size: 1.3rem;
 }
 
-.row.servesrow {
+.row.serves-row {
 	margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.row.serves-row .ui.header {
+    color: #6d6d6d;
+    font-family: To-japan;
+    font-weight: normal;
+    font-size: 1.1rem;
+    text-align: center;
+    background: #c5c5c5;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .recipename {
@@ -195,22 +218,22 @@ a.back-link {
     border-radius: 20px;
 }
 
-.ingredientquantity {
+.ingredient-quantity {
     display: inline;
-    margin-right: 10px;
+    font-weight: bold;
 }
 
-.ingredientunit {
+.ingredient-unit {
     display: inline;
 }
 
-.ingredientname {
+.ingredient-name {
 	display: inline;
 }
 
-.ui.header.contentsheader {
-    font-size: 25px;
-    font-family: Techna;
+.ui.header.contents-header {
+    font-family: To-japan;
+    font-weight: normal;
 }
 
 ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
@@ -233,19 +256,18 @@ ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
     font-size: 20px;
     padding: 3px;
     width: 30px;
-    padding-left: 8px;
-    padding-right: 8px;
 }
 
-.resultcontentright {
+.instructions-column {
 	border-left: 1px solid rgba(34, 36, 38, 0.15);
 }
 
-.ui.image.galleryimage {
+.ui.grid.image-gallery .column {
 	/*border-radius: 20px;*/
+    padding: 0px 10px;
 }
 
-.ingredientlistcolumn {
+.ingredients-column {
 	padding-left: 1rem;
 }
 

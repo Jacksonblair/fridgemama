@@ -14,12 +14,6 @@ include header
 			.ui.grid.results-grid
 				each recipe in results
 					.row.result-row
-						.recipe-rating
-							.stars
-								i.fas.fa-star
-								i.fas.fa-star
-								i.fas.fa-star
-								i.fas.fa-star
 						.ui.grid.result-grid
 							.row.summary-row(onClick="expandResult(this)")
 								.two.wide.middle.aligned.column.image-column
@@ -39,55 +33,57 @@ include header
 												each ingredient in recipe.ingredients
 													button.ui.tiny.button.ingredient-button= ingredient.name
 							.row.expanding-row
+								.ui.grid.content-grid
+									include gallery
+									.ui.grid
+										.row.recipe-description-row
+											.left.aligned.column
+												h3.ui.header.contents-header Description
+												p.recipe-description= recipe.description
+										.row.recipe-instructions-row
+											div(class="four wide left aligned column ingredients-column")
+												h3(class="ui header contents-header") Ingredients
+												div(class="row serves-row")
+													h3(class="ui header")
+														span Serves: 
+														span(class="recipe-serves" + recipe.name) 1 
+														button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)")
+															i.fas.fa-arrow-circle-up
+														button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)")
+															i.fas.fa-arrow-circle-down
+												div(class="row ingredient-row")
+													div(class="ui bulleted list")
+														each ingredient in recipe.ingredients
+															div(class="item")
+																span(class="ingredient-quantity " + recipe.name)= ingredient.quantity 
+																| 
+																span(class="ingredient-unit")= ingredient.unit 
+																|  of  
+																span(class="ingredient-name")= ingredient.name 
 
-								.ui.grid
-									.five.column.row.utils
-										button.ui.tiny.button.util-button Like
-										button.ui.tiny.button.util-button Favourite
-										button.ui.tiny.button.util-button Open in new tab
 
-									.row
-										div(class="four wide left aligned column resultcontentleft")
-											div(class="row")
-													h3(class="ui header contentsheader") Ingredients:
-											div(class="row servesrow")
-												h3(class="ui header")
-													span Serves 
-													span(class="recipeserves" + recipe.name) 1 
-													button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)") + 
-													button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)") - 
-											div(class="row")
-												div(class="ui bulleted list")
-													each ingredient in recipe.ingredients
-														div(class="item")
-															span(class="ingredientquantity" + recipe.name)= ingredient.quantity 
-															| 
-															span(class="ingredientunit")= ingredient.unit 
-															|  of  
-															span(class="ingredientname")= ingredient.name 
-
-
-										div(class="twelve wide left aligned column resultcontentright")
-											h3(class="ui header contentsheader") Method:
-											div(class="ui list")
-												div(class="item") 
-													strong Step 1:
-													div(class="ui list")
-														div(class="item") Do stuff
-												div(class="item") 
-													strong Step 2:
-													div(class="ui list")
-														div(class="item") Do more stuff
-												div(class="item") 
-													strong Step 3:
-													div(class="ui list")
-														div(class="item") Continue to do stuff
-												div(class="item") 
-													strong Step 4:
-													div(class="ui list")
-														div(class="item") Eat the stuff
-
-										include gallery
+											div(class="twelve wide left aligned column instructions-column")
+												h3(class="ui header contents-header") Method
+												div(class="ui list")
+													div(class="item") 
+														strong Step 1:
+														div(class="ui list")
+															div(class="item") Do stuff
+													div(class="item") 
+														strong Step 2:
+														div(class="ui list")
+															div(class="item") Do more stuff
+													div(class="item") 
+														strong Step 3:
+														div(class="ui list")
+															div(class="item") Continue to do stuff
+													div(class="item") 
+														strong Step 4:
+														div(class="ui list")
+															div(class="item") Eat the stuff
+										.row.recipe-comments-row
+											include comments
+										include utils
 				else
 					div(class="ui segment" id="noresultsdiv") 
 						h1(class="ui header") Sorry :(

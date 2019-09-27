@@ -44,6 +44,11 @@
 }
 
 @font-face {
+    font-family: 'Lato-BoldItalic';
+    src: url('/fonts/Lato-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'Montserrat-Regular';
     src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
 }

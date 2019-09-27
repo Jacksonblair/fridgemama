@@ -6,7 +6,7 @@ function incrementServe(recipe) {
 
 function decrementServe(recipe) {
 	var tempRecipe = JSON.parse(recipe);
-	var check = parseFloat(document.getElementsByClassName("recipeserves" + tempRecipe.name)[0].innerHTML);
+	var check = parseFloat(document.getElementsByClassName("recipe-serves" + tempRecipe.name)[0].innerHTML);
 	if (check > 1) {
 		changeQuantity(recipe, 0);
 	}
@@ -16,13 +16,13 @@ function changeQuantity(original, shouldIncrement) {
 	var recipe = JSON.parse(original); // parse into object
 
 	// change displayed recipe serves
-	var serveElement = document.getElementsByClassName("recipeserves" + recipe.name);
+	var serveElement = document.getElementsByClassName("recipe-serves" + recipe.name);
 	var newServes = parseFloat(serveElement[0].innerHTML);
 
 	serveElement[0].innerHTML = (shouldIncrement) ? String(newServes + 1) + " " : String(newServes - 1) + " ";
 
 	// change ingredient quantities
-	var element = document.getElementsByClassName("ingredientquantity" + recipe.name); // get quantity divs for recipe ingredients
+	var element = document.getElementsByClassName("ingredient-quantity " + recipe.name); // get quantity divs for recipe ingredients
 
 	for (var i = 0; i < element.length; i++) {
 		var newInt = parseFloat(element[i].innerHTML, 10) // parse current quantity into float
