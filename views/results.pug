@@ -1,4 +1,6 @@
 include header
+link(rel="stylesheet", href='/stylesheets/results_styles.css', type="text/css")
+include headerend
 
 #main-content.ui.center.aligned.grid
 	#main-body-row.row
@@ -14,76 +16,25 @@ include header
 			.ui.grid.results-grid
 				each recipe in results
 					.row.result-row
-						.ui.grid.result-grid
-							.row.summary-row(onClick="expandResult(this)")
-								.two.wide.middle.aligned.column.image-column
-									img.ui.small.centered.image(src="/images/image.png")
-								.fourteen.wide.middle.aligned.column
-									.row.recipe-name-row
-										.column
-											.recipe-name
-												= recipe.name
-											.recipe-time
-												i.fas.fa-clock
-												p
-													|  45 MINS
-									.row.recipe-notes-row
-										.column
-											.recipe-notes
-												each ingredient in recipe.ingredients
-													button.ui.tiny.button.ingredient-button= ingredient.name
-							.row.expanding-row
-								.ui.grid.content-grid
-									include gallery
-									.ui.grid
-										.row.recipe-description-row
-											.left.aligned.column
-												h3.ui.header.contents-header Description
-												p.recipe-description= recipe.description
-										.row.recipe-instructions-row
-											div(class="four wide left aligned column ingredients-column")
-												h3(class="ui header contents-header") Ingredients
-												div(class="row serves-row")
-													h3(class="ui header")
-														span Serves: 
-														span(class="recipe-serves" + recipe.name) 1 
-														button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)")
-															i.fas.fa-arrow-circle-up
-														button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)")
-															i.fas.fa-arrow-circle-down
-												div(class="row ingredient-row")
-													div(class="ui bulleted list")
-														each ingredient in recipe.ingredients
-															div(class="item")
-																span(class="ingredient-quantity " + recipe.name)= ingredient.quantity 
-																| 
-																span(class="ingredient-unit")= ingredient.unit 
-																|  of  
-																span(class="ingredient-name")= ingredient.name 
-
-
-											div(class="twelve wide left aligned column instructions-column")
-												h3(class="ui header contents-header") Method
-												div(class="ui list")
-													div(class="item") 
-														strong Step 1:
-														div(class="ui list")
-															div(class="item") Do stuff
-													div(class="item") 
-														strong Step 2:
-														div(class="ui list")
-															div(class="item") Do more stuff
-													div(class="item") 
-														strong Step 3:
-														div(class="ui list")
-															div(class="item") Continue to do stuff
-													div(class="item") 
-														strong Step 4:
-														div(class="ui list")
-															div(class="item") Eat the stuff
-										.row.recipe-comments-row
-											include comments
-										include utils
+						a(href="/recipe/" + recipe.id)
+							.ui.grid.result-grid
+								.row.summary-row
+									.two.wide.middle.aligned.column.image-column
+										img.ui.small.centered.image(src="/images/image.png")
+									.fourteen.wide.middle.aligned.column
+										.row.recipe-name-row
+											.column
+												.recipe-name
+													= recipe.name
+												.recipe-time
+													i.fas.fa-clock
+													p
+														|  45 MINS
+										.row.recipe-notes-row
+											.column
+												.recipe-notes
+													each ingredient in recipe.ingredients
+														button.ui.tiny.button.ingredient-button= ingredient.name
 				else
 					div(class="ui segment" id="noresultsdiv") 
 						h1(class="ui header") Sorry :(
@@ -92,5 +43,4 @@ include header
 		.one.wide.tablet.only.column
 		.three.wide.computer.only.column
 
-script(src="/javascripts/results.js")
 include footer

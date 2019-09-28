@@ -1,6 +1,10 @@
 
 /*Results page*/
 
+a {
+    width: 100%;
+}
+
 #main-body-row {
     padding-top: 0px;
 }
@@ -48,53 +52,17 @@
     box-shadow: 1px 1px 1px #add7e5;
 }
 
-.ui.grid > .row.summary-row-clicked {
-    background: #ffffffd4;
-    box-shadow: 1px 1px 1px #add7e5;
-    padding: 0px;
-}
-
-.ui.grid > .row.expanding-row {
-    visibility: visible;
-    opacity: 1;
-    height: auto;
-    transition: 1s all;
-    padding: 0px;
-}
-
-.row.expanding-row .ui.grid {
+.ui.grid.result-grid {
     margin: 0;
     width: 100%;
 }
 
-.ui.grid.result-grid {
-    margin: 0;
-}
-
-.ui.grid .row.utils {
-    padding: 0;
-    padding-top: 13px;
-    padding-left: 15px;
-    background: #ffffff94;
-}
-
-.ui.grid.content-grid{
-    background: #ffffff94;
-}
-
-.ui.grid.image-gallery {
-    background: #1f3137b0;
-}
 
 /* Result styles */
 
 .recipe-time p {
     display: inline;
     font-family: Lato-bold;
-}
-
-.ui.grid > .row > .column.image-column {
-    padding: 0px;
 }
 
 .recipe-name {
@@ -114,16 +82,6 @@
     text-align: left;
 }
 
-.row.recipe-description-row {
-    margin-top: 15px;
-}
-
-p.recipe-description {
-    font-family: Lato-bolditalic;
-    font-size: 1.2rem;
-    padding: 0px 20px;
-}
-
 /* NOTE BUTTONS */
 
 .recipe-notes {
@@ -132,163 +90,15 @@ p.recipe-description {
 }
 
 .ui.button.ingredient-button {
-    padding: 5px;
-    /* box-shadow: 1px 1px 1px #ffffff; */
-    background: #ffb478;
-    color: white;
+    padding: 7px;
+    background: #cdcdcd;
+    /* margin: 0px 5px; */
+    /* margin-bottom: 15px; */
+    font-family: To-japan;
+    font-weight: normal;
 }
 
 .ui.button.ingredient-button:hover {
-    background: #ffb478;
+    background: #cdcdcd;
     cursor: default;
-}
-
-/*UTIL BUTTONS*/
-
-.utils {
-    position: absolute;
-    right: 0px;
-    margin-top: 10px;
-}
-
-.ui.button.util-button {
-    padding: 8px;
-    height: 100%;
-    border-radius: 0px;
-    margin: 0;
-    font-family: To-japan;
-    font-weight: normal;
-    margin-right: 15px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 1px #bfbfbf;
-}
-
-
-/*RECIPE INFORMATION STYLING*/
-
-
-a.back-link {
-    font-size: 1.3rem;
-}
-
-.row.serves-row {
-	margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.row.serves-row .ui.header {
-    color: #6d6d6d;
-    font-family: To-japan;
-    font-weight: normal;
-    font-size: 1.1rem;
-    text-align: center;
-    background: #c5c5c5;
-    border-radius: 10px;
-    padding: 5px;
-}
-
-.recipename {
-	margin-bottom: 3px;
-	font-size: 40px;
-}
-
-.recipedescription {
-	margin-top: 0px;
-    color: #545454;
-    font-family: Techna;
-    font-weight: normal;
-    margin-bottom: 24px;
-    text-align: left;
-}
-
-.ui.stackable.left.aligned.grid.title.grid {
-    margin-right: 0px;
-    margin-left: 0.1rem;
-}
-
-.resultsegment {
-
-}
-
-.ui.segment.resultsegment {
-    border-top: 10px solid rgba(34, 36, 38, 0.15);
-    padding-top: 5px;
-    background: #f6f6f6;
-    margin-bottom: 50px;
-    border-radius: 20px;
-}
-
-.ingredient-quantity {
-    display: inline;
-    font-weight: bold;
-}
-
-.ingredient-unit {
-    display: inline;
-}
-
-.ingredient-name {
-	display: inline;
-}
-
-.ui.header.contents-header {
-    font-family: To-japan;
-    font-weight: normal;
-}
-
-ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
-	font-size: 15px;
-}
-
-ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
-	font-size: 15px;
-}
-
-.ui.grid > .row > .column.servesdiv {
-	padding: 0px;
-}
-
-.ui.grid > .row > .column.servesdiv h3{
-	font-family: Techna;
-}
-
-.ui.mini.button.amount {
-    font-size: 20px;
-    padding: 3px;
-    width: 30px;
-}
-
-.instructions-column {
-	border-left: 1px solid rgba(34, 36, 38, 0.15);
-}
-
-.ui.grid.image-gallery .column {
-	/*border-radius: 20px;*/
-    padding: 0px 10px;
-}
-
-.ingredients-column {
-	padding-left: 1rem;
-}
-
-.ui.comments {
-    text-align: left;
-}
-
-#noresultsdiv {
-    background-image: url(/images/tile02.png);
-    background-size: 10px;
-}
-
-#noresultsdiv h1 {
-    font-family: To-japan;
-    font-size: 19px;
-    font-weight: normal;
-}
-
-#indexlink {
-    font-family: To-japan;
-    margin-bottom: 50px;
-    margin-top: 10px;
-    font-size: 20px;
 }

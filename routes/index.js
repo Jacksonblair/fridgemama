@@ -4,6 +4,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 const session = require('client-sessions');
 const User = require('../db/user.js');
+const Recipe = require('../db/recipe.js');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -31,6 +32,12 @@ router.post('/results', async (req, res, next) => {
   }
 });
 
+router.get('/recipe/:id', async (req, res, next) => {
+	console.log("RECIPE ID: " + req.params.id);
+	// var recipe = Recipe.getOneById(req.params.id);
+	res.render('recipe', { recipe: results[0] });
+});
+
 router.get('/favicon.ico', (req, res) => {
     res.sendStatus(404);
 });
@@ -38,8 +45,9 @@ router.get('/favicon.ico', (req, res) => {
 var results = [
 		{
 			name: "Burger", 
-			description: "A tasty burger that will fuck your tastebuds up good. This burger will make you believe in god. This burger will ruin other burgers for you. Guaranteed life changing meal.",
+			description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
 			method: "Cook me and don't burn me bitch.",
+			id: 1,
 			ingredients: [
 				{ 
 				name: "Bread",
@@ -61,15 +69,17 @@ var results = [
 				},
 			],
 			images: [
-				'/images/image.png',
-				'/images/image.png',
-				'/images/image.png'
+				'/images/burger01.jpg',
+				'/images/burger02.jpg',
+				'/images/burger03.jpg',
+				'/images/burger03.jpg'
 			]
 		},
 		{
 			name: "Spaghetti", 
 			description: "A tasty burger that will fuck your tastebuds up good. This burger will make you believe in god. This burger will ruin other burgers for you. Guaranteed life changing meal.",
 			method: "Cook me and don't burn me bitch.",
+			id: 2,
 			ingredients: [
 				{ 
 				name: "Spaghetti",

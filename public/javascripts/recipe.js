@@ -1,4 +1,4 @@
-console.log("Loaded Javascripts/results.js");
+console.log("Loaded Javascripts/recipe.js");
 
 function incrementServe(recipe) {
 	changeQuantity(recipe, 1);
@@ -32,4 +32,34 @@ function changeQuantity(original, shouldIncrement) {
 
 		element[i].innerHTML = String(newInt); // update divs
 	}
+}
+
+// Open photoswipe when clicking on individual images
+function openPhotoswipe(recipe, i) {
+
+	console.log(recipe.images)
+
+	// Init photoswipe
+	var pswpElement = document.querySelectorAll('.pswp')[0];
+	var items = [];
+
+	recipe.images.forEach((url, index) => {
+		console.log(url);
+		let image = {};
+		image.src = url;
+		image.w = 800;
+		image.h = 600;
+		items.push(image);
+	});
+
+	// define options (if needed)
+	var options = {
+	    // optionName: 'option value'
+	    // for example:
+	    index: i // start at first slide
+	};
+
+	// // Initializes and opens PhotoSwipe
+	var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+	gallery.init();
 }

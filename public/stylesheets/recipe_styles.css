@@ -1,0 +1,258 @@
+/* RECIPE CONTAINER STYLING */
+
+.ui.grid {
+	position: relative;
+}
+
+.ui.grid .row.utils {
+    padding: 0;
+    padding-top: 13px;
+    padding-left: 15px;
+    background: #ffffff94;
+}
+
+.ui.grid.content-grid{
+    background: #ffffff94;
+    margin-bottom: 50px;
+}
+
+.ui.grid.recipe-content-grid {
+	margin-top: 0px;
+	margin: 0px;
+	background: white;
+    padding: 0px 40px;
+/*    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;*/
+    margin-bottom: 0em;
+    box-sizing: border-box;
+}
+
+.ui.grid .row.recipe-content-row {
+    padding: 0px;
+    padding-bottom: 32px;
+}
+
+/*GALLERY STYLES*/
+
+.ui.grid.image-gallery {
+    background: black;
+    margin: 0px;
+    overflow: hidden; 
+}
+
+.ui.grid > .row > .column.image-column {
+    padding: 0px;
+}
+
+.ui.image.gallery-image {
+	transform: scale(1);
+	transition: 0.6s all;
+}
+
+.ui.image.gallery-image:hover {
+	transform: scale(1.05);
+}
+
+/*COMMENT STYLES*/
+
+
+/*UTIL BUTTONS*/
+
+.ui.grid .utils {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 0px;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem;
+}
+
+.ui.button.util-button {
+    padding: 4px;
+    height: 100%;
+    border-radius: 0px;
+    margin: 0;
+    font-family: To-japan;
+    font-weight: normal;
+    margin-right: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #bfbfbf;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.1rem;
+}
+
+.ui.button.util-button.bookmark-button {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.ui.button.util-button span i {
+	font-size: 1.5rem;
+}
+
+/*RECIPE INFORMATION STYLING*/
+
+.ui.header.recipe-title {
+	font-family: To-japan;
+}
+
+.ui.grid .row.recipe-title-row {
+	padding-bottom: 5px;
+	margin-top: 40px;
+}
+
+.ui.grid .row.recipe-ingredient-tags-row {
+	padding: 0px;
+}
+
+.ui.button.ingredient-tag-button {
+	padding: 7px;
+ 	background: #ffb478;
+	margin: 0px 5px;
+	margin-bottom: 25px;
+	font-family: To-japan;
+	font-weight: normal;
+}
+
+p.recipe-description {
+    font-family: Lato-bolditalic;
+    font-size: 16px;
+    padding: 0px 20px;
+}
+
+a.back-link {
+    font-size: 1.3rem;
+}
+
+.row.serves-row {
+	margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.row.serves-row .ui.header {
+    color: #6d6d6d;
+    font-family: To-japan;
+    font-weight: normal;
+    font-size: 1.1rem;
+    text-align: center;
+    /*background: #c5c5c5;*/
+    border: 2px dashed #757575;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.recipename {
+	margin-bottom: 3px;
+	font-size: 40px;
+}
+
+.recipedescription {
+	margin-top: 0px;
+    color: #545454;
+    font-family: Techna;
+    font-weight: normal;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.ui.stackable.left.aligned.grid.title.grid {
+    margin-right: 0px;
+    margin-left: 0.1rem;
+}
+
+.resultsegment {
+
+}
+
+.ui.segment.resultsegment {
+    border-top: 10px solid rgba(34, 36, 38, 0.15);
+    padding-top: 5px;
+    background: #f6f6f6;
+    margin-bottom: 50px;
+    border-radius: 20px;
+}
+
+.ingredient-quantity {
+    display: inline;
+    font-weight: bold;
+}
+
+.ingredient-unit {
+    display: inline;
+}
+
+.ingredient-name {
+	display: inline;
+}
+
+.ui.header.contents-header {
+    font-family: To-japan;
+    font-weight: normal;
+    font-size: 16px;
+	/*background: #ffe9c8;*/
+    padding: 4px;
+    border-radius: 4px;
+    /*border: 4px solid #ffdb8d;*/
+    border-bottom: 4px solid grey;
+    margin-bottom: 8px;
+}
+
+ul.ui.list li, .ui.bulleted.list .list > .item, .ui.bulleted.list > .item {
+	font-size: 15px;
+}
+
+ul.ui.list li, ol.ui.list li, .ui.list > .item, .ui.list .list > .item {
+	font-size: 15px;
+}
+
+.ui.grid > .row > .column.servesdiv {
+	padding: 0px;
+}
+
+.ui.grid > .row > .column.servesdiv h3{
+	font-family: Techna;
+}
+
+.ui.mini.button.amount {
+    font-size: 20px;
+    padding: 3px;
+    width: 30px;
+}
+
+.instructions-column {
+	border-left: 1px solid rgba(34, 36, 38, 0.15);
+}
+
+.ui.grid.image-gallery .column {
+	/*border-radius: 20px;*/
+    padding: 0px 10px;
+}
+
+.ingredients-column {
+	padding-left: 1rem;
+}
+
+.ui.comments {
+    text-align: left;
+    max-width: none;
+}
+
+#noresultsdiv {
+    background-image: url(/images/tile02.png);
+    background-size: 10px;
+}
+
+#noresultsdiv h1 {
+    font-family: To-japan;
+    font-size: 19px;
+    font-weight: normal;
+}
+
+#indexlink {
+    font-family: To-japan;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    font-size: 20px;
+}

@@ -1,6 +1,6 @@
-div(class="ui four wide computer one wide mobile stackable center aligned grid image-gallery")
-	each url in recipe.images
-		div(class="four wide column")
-			img(class="ui image gallery-image" src=url)
+div(class="ui stackable center aligned grid image-gallery")
+	each url, index in recipe.images
+		.four.wide.column
+			img(class="ui fluid image gallery-image" src=url onClick='openPhotoswipe(' + JSON.stringify(recipe) + ", " + index + ')')
 	else
 		h1(class="ui header") NO IMAGES :(
