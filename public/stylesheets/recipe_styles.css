@@ -20,7 +20,7 @@
 	margin-top: 0px;
 	margin: 0px;
 	background: white;
-    padding: 0px 40px;
+    padding: 0px 24px;
 /*    border-left: 4px solid black;
     border-right: 4px solid black;
     border-top: 4px solid black;*/
@@ -96,11 +96,17 @@
 
 .ui.header.recipe-title {
 	font-family: To-japan;
+    margin-bottom: 16px;
+    margin-top: 16px;
 }
 
 .ui.grid .row.recipe-title-row {
-	padding-bottom: 5px;
-	margin-top: 40px;
+	padding-bottom: 8px;
+    margin-top: 16px;
+}
+
+.ui.image.preview-image {
+    border-radius: 16px;
 }
 
 .ui.grid .row.recipe-ingredient-tags-row {
@@ -108,12 +114,18 @@
 }
 
 .ui.button.ingredient-tag-button {
-	padding: 7px;
+	padding: 8px;
  	background: #ffb478;
-	margin: 0px 5px;
-	margin-bottom: 25px;
+	margin: 0px 4px;
 	font-family: To-japan;
 	font-weight: normal;
+}
+
+.ui.button.recipe-note-button {
+    padding: 8px;
+    margin: 0px 4px;
+    font-family: To-japan;
+    font-weight: normal;
 }
 
 p.recipe-description {

@@ -10,18 +10,25 @@ include headerend
 		.one.wide.tablet.only.column
 		.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.column
 			.ui.grid.content-grid
-				include gallery
 				.ui.grid.recipe-content-grid
 					.row.recipe-content-row.recipe-title-row
-						.middle.aligned.column
-							h1.ui.header.recipe-title
-								= recipe.name
-					.row.recipe-content-row.recipe-ingredient-tags-row
-						.middle.aligned.column
-							button.ui.tiny.button.ingredient-tag-button Beef
-							button.ui.tiny.button.ingredient-tag-button Lettuce
-							button.ui.tiny.button.ingredient-tag-button Bread Bun
-							button.ui.tiny.button.ingredient-tag-button Bacon
+						.eight.wide.middle.aligned.column
+							.row
+								h1.ui.header.recipe-title
+									= recipe.name
+							.row.recipe-content-row.recipe-ingredient-tags-row
+								.middle.aligned.column
+									button.ui.tiny.button.ingredient-tag-button Beef
+									button.ui.tiny.button.ingredient-tag-button Lettuce
+									button.ui.tiny.button.ingredient-tag-button Bread Bun
+									button.ui.tiny.button.ingredient-tag-button Bacon
+							.ui.divider
+							.row
+								.middle.aligned.column
+									button.ui.tiny.basic.button.recipe-note-button 45 MINS					
+									button.ui.tiny.basic.button.recipe-note-button EASY			
+						.eight.wide.right.aligned.column
+							img.ui.large.image.preview-image(src="/images/burger01.jpg")
 					.row.recipe-content-row.recipe-description-row
 						.left.aligned.column
 							h3.ui.header.contents-header Description
