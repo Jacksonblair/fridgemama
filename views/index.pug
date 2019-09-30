@@ -1,11 +1,14 @@
 include header
+	link(rel="stylesheet", href='/stylesheets/index_styles.css', type="text/css")
+	link(rel="stylesheet", href='/stylesheets/search_bar_styles.css', type="text/css")
 include headerend
 
-#main-content.ui.stackable.grid
-	#main-row-body.row
-		.two.wide.computer.only.column
-		.one.wide.tablet.only.column
-		.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.middle.aligned.column
+#site-content.ui.grid
+	.two.wide.computer.only.column
+	.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.middle.aligned.column.centre-column
+		.ui.grid.center.aligned.content-grid
+
+
 			#blurb-row.row
 				h3 FRIDGEMAMA HELPS YOU EMPTY YOUR FRIDGE.
 					br
@@ -21,8 +24,10 @@ include headerend
 					#results.ui.middle.aligned.selection.list
 					#results-container
 						#tags-list.ui.basic.segment
-		.one.wide.tablet.only.column
-		.two.wide.computer.only.column
+
+
+
+	.two.wide.computer.only.column
 
 include footer
 script(src="/javascripts/ingredient_search.js")

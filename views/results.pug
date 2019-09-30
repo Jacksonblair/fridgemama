@@ -1,46 +1,52 @@
 include header
-link(rel="stylesheet", href='/stylesheets/results_styles.css', type="text/css")
+	link(rel="stylesheet", href='/stylesheets/search_bar_styles.css', type="text/css")
+	link(rel="stylesheet", href='/stylesheets/results_styles.css', type="text/css")
 include headerend
 
-#main-content.ui.center.aligned.grid
-	#main-body-row.row
-		.three.wide.computer.only.column
-		.one.wide.tablet.only.column
-		.ten.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.column
-			h1(id="results-main-logo") FRiDGEMAMA FOUND . . .
-			h2(class="ui left aligned header" id="number-found-header")
-				span(id="num-results")= results.length
+#site-content.ui.grid
+	.two.wide.computer.only.column
+	.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.column.centre-column
+		.ui.grid.content-grid
 
-				|  results that contain those ingredients!
 
-			.ui.grid.results-grid
-				each recipe in results
-					.row.result-row
-						a(href="/recipe/" + recipe.id)
+			.ui.center.aligned.grid.result-content-grid
+				.row.results-found-row
+					h2.ui.header.found-header FRiDGEMAMA FOUND . . .
+				.row.results-number-row
+					h3.ui.header.number-found-header
+						span.results-count= results.length
+						|  results that contain those ingredients!
+				include searchbar
+				.ui.grid.results-grid
+					.row.filter-row
+						.right.aligned.column
+							include result_filter
+					each recipe in results
+						.row.result-row
 							.ui.grid.result-grid
 								.row.summary-row
-									.two.wide.middle.aligned.column.image-column
-										img.ui.small.centered.image(src="/images/image.png")
-									.fourteen.wide.middle.aligned.column
+									.three.wide.column.image-column
+										a(href="/recipe/" + recipe.id)
+											img.ui.image(src="/images/burger01.jpg")
+									.thirteen.wide.middle.aligned.column.info-column
 										.row.recipe-name-row
-											.column
-												.recipe-name
+											.recipe-name
+												a(href="/recipe/" + recipe.id)
 													= recipe.name
-												.recipe-time
-													i.fas.fa-clock
-													p
-														|  45 MINS
+										.row.recipe-ingredient-tags-row
+											each ingredient in recipe.ingredients
+												button.ui.tiny.button.ingredient-tag-button= ingredient.name
+										.ui.divider.result-divider
 										.row.recipe-notes-row
-											.column
-												.recipe-notes
-													each ingredient in recipe.ingredients
-														button.ui.tiny.button.ingredient-button= ingredient.name
-				else
-					div(class="ui segment" id="noresultsdiv") 
-						h1(class="ui header") Sorry :(
-					div(id="indexlink")
-						a.back-link(href="/") Go back
-		.one.wide.tablet.only.column
-		.three.wide.computer.only.column
+											button.ui.tiny.button.recipe-note-button 45 MINS
+											button.ui.tiny.button.recipe-note-button EASY
+
+					else
+						div(class="ui segment" id="noresultsdiv") 
+							h1(class="ui header") Sorry :(
+						div(id="indexlink")
+							a.back-link(href="/") Go back
+	.two.wide.computer.only.column
 
 include footer
+script(src="/javascripts/ingredient_search.js")

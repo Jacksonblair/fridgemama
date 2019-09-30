@@ -1,15 +1,14 @@
 /* Footer content */
 
-#footer-content {
+#site-footer-content {
     background-image: url(/images/tile02.png);
     border-top: 5px solid #fffde2;
     text-align: center;
+    margin: 0;
 }
 
 #main-row-footer {
     margin: 0;
-    padding: 0.3rem;
-    padding-bottom: 0.trem;
 }
 
 #footer-text {

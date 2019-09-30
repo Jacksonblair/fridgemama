@@ -1,104 +1,121 @@
+/*RESULTS CONTAINER STYLES*/
 
-/*Results page*/
-
-a {
-    width: 100%;
+.ui.grid.content-grid {
+    background: white;
+    height: 100%;
+    margin: 0px;
+    align-content: baseline;
 }
 
-#main-body-row {
+.ui.grid.result-content-grid {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin: 0px;
+    /*background: white;*/
+    padding: 0px 24px;
+/*    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 4px solid black;*/
+    margin-bottom: 0em;
+    box-sizing: border-box;
+    padding: 0px 24px;
+}
+
+.ui.grid .column.info-column {
+    padding-left: 0px;
+}
+
+.ui.grid .row.result-row {
+    margin-top: 8px;
+}
+
+.ui.grid .row.summary-row {
+    padding: 8px;
+}
+
+.ui.grid .row.filter-row {
+    padding: 4px;
+}
+
+/*Search bar styles*/
+
+#results-container {
+    /* position: absolute; */
+    z-index: 1;
+    /* margin-top: 16px; */
+    /* margin-bottom: 100px; */
+    width: 100%;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+/*Results page styles*/
+
+.column .ui.dropdown {
+    padding: 8px 16px;
+}
+
+.ui.grid .row + .ui.divider.header-divider {
+    margin-top: 0px;
+}
+
+.ui.grid .row + .ui.divider.result-divider {
+    margin: 8px 0px;
+}
+
+.ui.grid .column.image-column img {
+    border-radius: 8px;
+}
+
+.ui.header.found-header {
+    font-family: To-japan;
+}
+
+.ui.header.number-found-header {
+    font-family: To-japan;
+    color: #ff6666;
+    font-weight: normal;
+}
+
+.ui.grid .row.results-found-row {
+    margin-top: 100px;
+    padding-bottom: 4px;
+}
+
+.ui.grid .row.results-number-row {
     padding-top: 0px;
 }
 
-#results-main-logo {
-	font-family: To-japan;
-	font-size: 1.7rem;
-    color: white;
-    font-weight: normal;
-    text-shadow: 1px 1px 1px #97c8ff;
-    margin-bottom: 8px;
-    padding-top: 50px;
-}
-
-#number-found-header {
-	color: #ff5a5a;
-	margin-top: 0px;
-    font-size: 1.2rem;
-    font-family: To-japan;
-    text-align: center;
-    font-weight: normal;
-}
-
-#num-results {
-    /*color: #f64545;*/
-}
-
-/* Result containers */
-
-.ui.grid > .row.result-row {
-    /*background: #ffffff94;*/
-    margin-top: 15px;
-    padding: 0px;
-    border-radius: 5px;
-}
-
-.ui.grid > .row.summary-row {
-    background: #ffffff94;;
-    transition: 0.3s all;
-    padding: 0px;
-}
-
-.ui.grid > .row.summary-row:hover {
-    background: #ffffffe6;
-    box-shadow: 1px 1px 1px #add7e5;
-}
-
-.ui.grid.result-grid {
-    margin: 0;
-    width: 100%;
-}
-
-
-/* Result styles */
-
-.recipe-time p {
-    display: inline;
-    font-family: Lato-bold;
+.ui.grid .row.recipe-notes-row {
+    padding-bottom: 8px;
 }
 
 .recipe-name {
-    padding-top: 1px;
-    font-family: To-Japan;
-    font-size: 1.2rem;
-    color: #254f69;
-    display: inline-block;
-    /*text-shadow: 1px 1px 1px #cf9e38;*/
-}
-
-.row.recipe-name-row {
-    text-align: left;
-}
-
-.row.recipe-notes-row {
-    text-align: left;
-}
-
-/* NOTE BUTTONS */
-
-.recipe-notes {
-    display: inline-block;
-    width: auto;
-}
-
-.ui.button.ingredient-button {
-    padding: 7px;
-    background: #cdcdcd;
-    /* margin: 0px 5px; */
-    /* margin-bottom: 15px; */
     font-family: To-japan;
     font-weight: normal;
+    font-size: 1.3rem;
+    padding: 8px 4px;
+    color: black;
 }
 
-.ui.button.ingredient-button:hover {
-    background: #cdcdcd;
-    cursor: default;
+.recipe-time p {
+    display: inline-block;
+    font-family: Lato-Bold;
+}
+
+.ui.button.ingredient-tag-button {
+    padding: 8px;
+    background: #ffb478;
+    margin: 0px 4px;
+    font-family: To-japan;
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+.ui.button.recipe-note-button {
+    padding: 8px;
+    margin: 0px 4px;
+    font-family: Lato-bold;
+    font-size: 0.9rem;
+    font-weight: normal;
 }

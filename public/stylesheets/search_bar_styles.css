@@ -1,0 +1,67 @@
+
+#search-row {
+    /*height: 80px;*/
+    padding-bottom: 5%;
+    padding-top: 0px;
+}
+
+.ingredientMatch {
+    width: 200px;
+    height: 50px;
+    border: 2px solid black;
+    display: block;
+}
+
+#search-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+#search-field {
+    border-radius: 20px 0px 0px 20px;
+    font-family: 'To-japan';
+    font-size: 1rem;
+}
+
+#submit-button {
+    margin-left: 0px;
+    border-radius: 0px 20px 20px 0px;
+    font-family: 'To-japan';
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+#search-form {
+    display: inline;
+}
+
+#main-search-input {
+    margin-top: 10px;
+}
+
+#results {
+    width: 30%;
+    margin: 0 auto;
+    position: absolute;
+    top: 65px;
+    left: 35%;
+    background: white;
+    opacity: 0.8;
+    z-index: 2;
+}
+
+#tags-list {
+    margin: 0 auto;
+    padding: 0px;
+}
+
+#tag-input {
+    display: none;
+}
+
+.tagbutton.ui.button {
+    font-size: 1rem;
+    padding: 5px 10px 5px 10px;
+    transition: 0.3s all;
+}

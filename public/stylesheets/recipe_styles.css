@@ -1,9 +1,5 @@
 /* RECIPE CONTAINER STYLING */
 
-.ui.grid {
-	position: relative;
-}
-
 .ui.grid .row.utils {
     padding: 0;
     padding-top: 13px;
@@ -11,19 +7,20 @@
     background: #ffffff94;
 }
 
-.ui.grid.content-grid{
-    background: #ffffff94;
-    margin-bottom: 50px;
+.ui.grid.content-grid {
+    background: white;
+    height: 100%;
+    margin: 0px;
 }
 
 .ui.grid.recipe-content-grid {
 	margin-top: 0px;
 	margin: 0px;
-	background: white;
+	/*background: white;*/
     padding: 0px 24px;
 /*    border-left: 4px solid black;
     border-right: 4px solid black;
-    border-top: 4px solid black;*/
+    border-top: 4px solid black0;*/
     margin-bottom: 0em;
     box-sizing: border-box;
 }
@@ -124,7 +121,8 @@
 .ui.button.recipe-note-button {
     padding: 8px;
     margin: 0px 4px;
-    font-family: To-japan;
+    font-family: Lato-bold;
+    font-size: 1rem;
     font-weight: normal;
 }
 

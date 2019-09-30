@@ -7,25 +7,21 @@ body {
 
 #content {
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
-    height: 100vh;
     background-image: url(/images/tile02.jpg);
     background-color:#cbf2ff;
     background-size: 20%;
 }
 
-#menu-content {
-    flex-shrink: 0;
+#site-content {
+    flex: 1;
+    box-sizing: border-box;
+    border: 1px solid red;
 }
 
-#main-content {
-    flex: 1 0 auto;
-}
-
-#footer-content {
-    /*height: 75px;*/
-    margin: 0;
-    flex-shrink: 0;
+.ui.grid .column.centre-column {
+    padding-top: 0px;
 }
 
 /*

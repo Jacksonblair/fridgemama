@@ -4,89 +4,87 @@ include header
 	link(rel="stylesheet", href='/photoswipe/default-skin/default-skin.css', type="text/css")
 include headerend
 
-#main-content.ui.center.aligned.grid
-	#main-body-row.row
-		.two.wide.computer.only.column
-		.one.wide.tablet.only.column
-		.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.column
-			.ui.grid.content-grid
-				.ui.grid.recipe-content-grid
-					.row.recipe-content-row.recipe-title-row
-						.eight.wide.middle.aligned.column
-							.row
-								h1.ui.header.recipe-title
-									= recipe.name
-							.row.recipe-content-row.recipe-ingredient-tags-row
-								.middle.aligned.column
-									button.ui.tiny.button.ingredient-tag-button Beef
-									button.ui.tiny.button.ingredient-tag-button Lettuce
-									button.ui.tiny.button.ingredient-tag-button Bread Bun
-									button.ui.tiny.button.ingredient-tag-button Bacon
-							.ui.divider
-							.row
-								.middle.aligned.column
-									button.ui.tiny.basic.button.recipe-note-button 45 MINS					
-									button.ui.tiny.basic.button.recipe-note-button EASY			
-						.eight.wide.right.aligned.column
-							img.ui.large.image.preview-image(src="/images/burger01.jpg")
-					.row.recipe-content-row.recipe-description-row
-						.left.aligned.column
-							h3.ui.header.contents-header Description
-							p.recipe-description= recipe.description
-					.row.recipe-content-row.recipe-instructions-row
-						div(class="four wide left aligned column ingredients-column")
-							h3(class="ui header contents-header") Ingredients
-							div(class="row serves-row")
-								h3(class="ui header")
-									span Serves: 
-									span(class="recipe-serves" + recipe.name) 1 
-									button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)")
-										i.fas.fa-arrow-circle-up
-									button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)")
-										i.fas.fa-arrow-circle-down
-							div(class="row ingredient-row")
-								div(class="ui bulleted list")
-									each ingredient in recipe.ingredients
-										div(class="item")
-											span(class="ingredient-quantity " + recipe.name)= ingredient.quantity 
-											| 
-											span(class="ingredient-unit")= ingredient.unit 
-											|  of  
-											span(class="ingredient-name")= ingredient.name 
+#site-content.ui.grid
+	.two.wide.computer.only.column
+	.twelve.wide.computer.fourteen.wide.tablet.sixteen.wide.mobile.center.aligned.column.centre-column
+		.ui.grid.content-grid
+
+			.ui.grid.recipe-content-grid
+				.row.recipe-content-row.recipe-title-row
+					.eight.wide.middle.aligned.column
+						.row
+							h1.ui.header.recipe-title
+								= recipe.name
+						.row.recipe-content-row.recipe-ingredient-tags-row
+							.middle.aligned.column
+								button.ui.tiny.button.ingredient-tag-button Beef
+								button.ui.tiny.button.ingredient-tag-button Lettuce
+								button.ui.tiny.button.ingredient-tag-button Bread Bun
+								button.ui.tiny.button.ingredient-tag-button Bacon
+						.ui.divider
+						.row
+							.middle.aligned.column
+								button.ui.tiny.basic.button.recipe-note-button 45 MINS					
+								button.ui.tiny.basic.button.recipe-note-button EASY			
+					.eight.wide.right.aligned.column
+						img.ui.large.image.preview-image(src="/images/burger01.jpg")
+				.row.recipe-content-row.recipe-description-row
+					.left.aligned.column
+						h3.ui.header.contents-header Description
+						p.recipe-description= recipe.description
+				.row.recipe-content-row.recipe-instructions-row
+					div(class="four wide left aligned column ingredients-column")
+						h3(class="ui header contents-header") Ingredients
+						div(class="row serves-row")
+							h3(class="ui header")
+								span Serves: 
+								span(class="recipe-serves" + recipe.name) 1 
+								button(class="ui mini button amount" value=recipe onClick="incrementServe(this.value)")
+									i.fas.fa-arrow-circle-up
+								button(class="ui mini button amount" value=recipe onClick="decrementServe(this.value)")
+									i.fas.fa-arrow-circle-down
+						div(class="row ingredient-row")
+							div(class="ui bulleted list")
+								each ingredient in recipe.ingredients
+									div(class="item")
+										span(class="ingredient-quantity " + recipe.name)= ingredient.quantity 
+										| 
+										span(class="ingredient-unit")= ingredient.unit 
+										|  of  
+										span(class="ingredient-name")= ingredient.name 
 
 
-						div(class="twelve wide left aligned column instructions-column")
-							h3(class="ui header contents-header") Method
-							div(class="ui list")
-								div(class="item") 
-									strong Step 1:
-									div(class="ui list")
-										div(class="item") Do stuff
-								div(class="item") 
-									strong Step 2:
-									div(class="ui list")
-										div(class="item") Do more stuff
-								div(class="item") 
-									strong Step 3:
-									div(class="ui list")
-										div(class="item") Continue to do stuff
-								div(class="item") 
-									strong Step 4:
-									div(class="ui list")
-										div(class="item") Eat the stuff
-					.row.recipe-content-row.tips-row
-						.left.aligned.column
-							h3.ui.header.contents-header TIPS
-							.ui.bulleted.list
-								.item Don't burn me
-								.item Don't eat meat without cooking it first you dumb bitch
-					.row.recipe-content-row.comments-row
-						.column
-							include comments
-					include utils
-					include photoswipe
-		.one.wide.tablet.only.column
-		.two.wide.computer.only.column
+					div(class="twelve wide left aligned column instructions-column")
+						h3(class="ui header contents-header") Method
+						div(class="ui list")
+							div(class="item") 
+								strong Step 1:
+								div(class="ui list")
+									div(class="item") Do stuff
+							div(class="item") 
+								strong Step 2:
+								div(class="ui list")
+									div(class="item") Do more stuff
+							div(class="item") 
+								strong Step 3:
+								div(class="ui list")
+									div(class="item") Continue to do stuff
+							div(class="item") 
+								strong Step 4:
+								div(class="ui list")
+									div(class="item") Eat the stuff
+				.row.recipe-content-row.tips-row
+					.left.aligned.column
+						h3.ui.header.contents-header TIPS
+						.ui.bulleted.list
+							.item Don't burn me
+							.item Don't eat meat without cooking it first you dumb bitch
+				.row.recipe-content-row.comments-row
+					.column
+						include comments
+				include utils
+				include photoswipe
+	.two.wide.computer.only.column
 
 
 script(src="/photoswipe/photoswipe.min.js")
