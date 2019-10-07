@@ -60,8 +60,12 @@
     display: none;
 }
 
-.tagbutton.ui.button {
+.ui.button.tag-button {
     font-size: 1rem;
     padding: 5px 10px 5px 10px;
     transition: 0.3s all;
+    font-family: To-japan;
+    font-weight: normal;
+    margin: 5px;
 }
+

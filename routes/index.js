@@ -24,12 +24,22 @@ router.get('/results', function(req, res, next) {
 router.post('/results', async (req, res, next) => {
   try {
   	console.log(req.body.tags);
+
+	// separate tags into array, so they can persist through multiple searches
+  	res.locals.tags = req.body.tags.split(',');
+  	res.locals.tagstring = req.body.tags;
+
 	// var results = await queries.getRecipes(req.body.tags)
 	res.render('results', { results: results });
   } catch (e) {
     //this will eventually be handled by your error handling middleware
     next(e) 
   }
+});
+
+
+router.get('/recipe/submit', isAdmin, async (req, res,next) => {
+	res.render('submit');
 });
 
 router.get('/recipe/:id', async (req, res, next) => {
@@ -112,6 +122,15 @@ function loginRequired(req, res, next) {
 	if (!req.user)
 		return res.redirect('/auth/login');
 
+	next();
+}
+
+function isAdmin(req, res, next) {
+
+	if (!req.user || !req.user.isadmin) {
+		return res.redirect('/');
+	}
+	
 	next();
 }
 

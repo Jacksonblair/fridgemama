@@ -48,7 +48,6 @@ app.use((req, res, next) => {
 		res.locals.user = user.rows[0];
 		console.log(res.locals.user);
 
-
 		next();
 	})
 	.catch(err => {

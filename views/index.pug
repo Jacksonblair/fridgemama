@@ -19,7 +19,7 @@ include headerend
 						input#search-field(type="text" placeholder="Enter an ingredient...")
 					form#search-form(action="/results" method="post")
 						.ui.input
-							input#tag-input(type="text" value="" name="tags")
+							input#tag-input(type="text" name="tags")
 						input#submit-button.ui.huge.yellow.button(type="submit" value="Find a recipe!")
 					#results.ui.middle.aligned.selection.list
 					#results-container
